@@ -1,0 +1,127 @@
+{% if collection.handle == 'new-bikes' %}
+
+  <h3>New Bike Categories</h3>
+  <h6>Browse a bike for size availability</h6>
+  <ul>
+    {% for link in linklists.new-bikes.links %}
+         <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+     </ul>
+
+{% elsif collection.handle == 'used-bikes' %}
+
+  <h3>Browse by Type</h3>
+  <ul>
+    {% for link in linklists.used-bikes.links %}
+         <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+     </ul>
+
+{% elsif collection.handle == 'used-cyclocross-bikes' %}
+
+  <h3>Sizes</h3>
+  <a href="/collections/used-bikes">&larr; Back</a>
+  <ul>
+    {% for link in linklists.used-cyclocross-bikes.links %}
+         <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+     </ul>
+
+{% elsif collection.handle == 'used-mountain-bikes' %}
+
+  <h3>Sizes</h3>
+  {{ linklist.title }}
+  <ul>
+    {% for link in linklists.used-mountain-bikes.links %}
+      <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+     </ul>
+
+{% elsif collection.handle == 'new-frames' %}
+
+  <h3>New Frame Categories</h3>
+  <ul>
+    {% for link in linklists.new-frames.links %}
+         <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+     </ul>
+
+{% elsif collection.handle == 'used-frames' %}
+
+  <h3>Used Frame Categories</h3>
+  <ul>
+    {% for link in linklists.used-frames.links %}
+         <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+     </ul>
+{% endif %}
+
+
+{% comment %}
+  <h3>Cyclocross</h3>
+  <ul>
+    <li>
+      <a href="/collections/cyclocross" alt="">All Sizes</a>
+      <a href="/collections/cyclocross?constraint=47cm-under" alt="">47cm-Under</a>
+      <a href="/collections/cyclocross?constraint=48-51cm" alt="">48-51cm</a>
+      <a href="/collections/cyclocross?constraint=52-54cm" alt="">52-54cm</a>
+      <a href="/collections/cyclocross?constraint=55-56cm" alt="">55-56cm</a>
+      <a href="/collections/cyclocross?constraint=57-59cm" alt="">57-59cm</a>
+      <a href="/collections/cyclocross?constraint=60-61cm" alt="">60-61cm</a>
+      <a href="/collections/cyclocross?constraint=62cm-up" alt="">62cm-Up</a>
+    </li>
+  </ul>
+
+{% endif %}
+
+{% if collection.handle == 'new-bikes' or collection.handle == 'mountain' %}
+
+  <h3>Mountain</h3>
+  <ul>
+    <li>
+      <a href="/collections/cyclocross" alt="">All Sizes</a>
+      <a href="/collections/cyclocross?constraint=47cm-under" alt="">47cm-Under</a>
+      <a href="/collections/cyclocross?constraint=48-51cm" alt="">48-51cm</a>
+      <a href="/collections/cyclocross?constraint=52-54cm" alt="">52-54cm</a>
+      <a href="/collections/cyclocross?constraint=55-56cm" alt="">55-56cm</a>
+      <a href="/collections/cyclocross?constraint=57-59cm" alt="">57-59cm</a>
+      <a href="/collections/cyclocross?constraint=60-61cm" alt="">60-61cm</a>
+      <a href="/collections/cyclocross?constraint=62cm-up" alt="">62cm-Up</a>
+    </li>
+  </ul>
+
+{% endif %}
+
+<div id="accordion">
+
+  <h3>Cyclocross</h3>
+  <div>
+    <ul>
+      <li>
+        <a href="/" alt="">47cm-Under</a>
+        <a href="/" alt="">48-51cm</a>
+        <a href="/collections/bikes/used+cyclocross+52-54cm" alt="">52-54cm</a>
+        <a href="/" alt="">55-56cm</a>
+        <a href="/" alt="">57-59cm</a>
+        <a href="/" alt="">60-61cm</a>
+        <a href="/" alt="">62cm-Up</a>
+      </li>
+    </ul>
+  </div>
+
+  <h3>Mountain</h3>
+  <div>
+    <ul>
+      <li>
+        <a href="/" alt="">13in-below</a>
+        <a href="/" alt="">14-15in</a>
+        <a href="/" alt="">16-17in</a>
+        <a href="/collections/bikes/used+mountain+18-19in" alt="">18-19in</a>
+        <a href="/" alt="">20-21in</a>
+        <a href="/" alt="">22in-up</a>
+      </li>
+    </ul>
+  </div>
+
+</div><!-- #accordion -->
+{% endcomment %}

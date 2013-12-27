@@ -1,0 +1,118 @@
+{% comment %}
+Re-use the 'rte' class wherever you output content that was added by a merchant using
+the Rich Text Editor ( 'rte' stands for rich text editor ).
+Style all HTML elements in that content the same way across the board.
+Use the 'rte' class in your CSS to help maintain that consistency.
+Example: the h2 element should have the same size and color in:
+- product descriptions
+- collection descriptions
+- 'page' pages' content
+- blog post
+{% endcomment %}
+
+{% if settings.show_slideshow %}
+
+<div id="slideshow" class="ten columns">
+
+  <div id="slideshow-container">
+    <ul id="slides">
+      
+    {% comment %}
+    {% raw %}
+    
+    To add slides to your home page slideshow, you need to do 2 things:
+    
+    1.  Add settings to your config/settings.html file for each additional slide that you want to add. 
+        Copy a block of code for a slide, replace any instance of the number for that slide 
+        with the number of the next slide that you want to add. For example, if you're adding a 7th slide, 
+        you would replace all instances of '6' with '7'. Repeat for each added slide. Then, save your 
+        config/settings.html file and come back here.
+    2.  Change the '6' in {% for i in (1..6) %} right below to the new total of slides you have.
+
+    {% endraw %}        
+    {% endcomment %}
+      
+    {% for i in (1..6) %}
+    
+      {% capture slide %}slide_{{ i }}{% endcapture %}
+      {% capture slide_img %}slide_{{ i }}.jpg{% endcapture %}
+      {% capture slide_media_type %}slide_{{ i }}_media_type{% endcapture %}
+      {% capture slide_bg_color %}slide_{{ i }}_bg_color{% endcapture %}
+      {% capture slide_link_type %}slide_{{ i }}_link_type{% endcapture %}
+      {% capture slide_link_url %}slide_{{ i }}_link_url{% endcapture %}
+      {% capture slide_link_title %}slide_{{ i }}_link_title{% endcapture %}
+      {% capture slide_caption %}slide_{{ i }}_caption{% endcapture %}
+      {% capture slide_video %}slide_{{ i }}_video{% endcapture %}
+
+      {% if settings[slide] %}
+
+        {% if settings[slide_media_type] == 'image' %}
+          <li style="background: url('{{ slide_img | asset_url }}') no-repeat 50% 50% {{ settings[slide_bg_color] }} ;" id="slide-{{ i }}" class="slide">
+            {% if settings[slide_link_type] == 'slide_link' and settings[slide_link_url].size > 0 %}
+              <a class="slide-link-through" href="{{ settings[slide_link_url] }}"></a>
+            {% endif %}
+
+            {% if settings[slide_caption].size > 0 or settings[slide_link_title].size > 0 %}
+              <div class="slide-caption">
+                {% if settings[slide_caption].size > 0 %}
+                  <h2 class="smooth">{{ settings[slide_caption] }}</h2>
+                {% endif %}
+
+                {% if settings[slide_link_title].size > 0 %}
+                  <a class="slide-link smooth" href="{{ settings[slide_link_url] }}">{{ settings[slide_link_title] }}</a>
+                {% endif %}
+              </div><!-- .slide_caption -->
+            {% endif %}
+          </li>
+        {% else %}
+          <li style="background:{{ settings[slide_bg_color] }};" id="slide-{{ i }}" class="slide">
+            {{ settings[slide_video] }}
+          </li>
+        {% endif %}
+
+      {% endif %}
+      
+    {% endfor %}
+
+    </ul>
+  </div><!-- #slideshow-container -->
+
+  <ul id="slideshow-controls"></ul>
+
+</div><!-- #slideshow -->
+
+<div class="shop_calendar">
+
+  testing
+
+</div>
+
+<div class="clear"></div>
+
+{% endif %}
+{% assign page = pages.frontpage %}
+
+<div class="rte">
+  {{ page.content }}
+</div>
+
+{% assign collection = collections.frontpage %}
+
+<h2>Featured Bikes!</h2>
+<ul class="grid clearfix">
+{% for product in collection.products %}
+  {% include 'product-grid-item' with 'eight columns' %}
+{% else %}
+<p>You have no products in your Frontpage collection. <a href="http://www.shopify.com/admin/custom_collections">Add some.</a></p>
+{% endfor %}
+</ul>
+{% assign collection = collections.new-frames %}
+
+<h2>New Frames!</h2>
+<ul class="grid clearfix">
+{% for product in collection.products %}
+  {% include 'product-grid-item' with 'eight columns' %}
+{% else %}
+<p>You have no products in your Frontpage collection. <a href="http://www.shopify.com/admin/custom_collections">Add some.</a></p>
+{% endfor %}
+</ul>

@@ -1,0 +1,584 @@
+<div class="section-info">
+<p>Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our <a title="Open Wiki in a new window" target="wiki" href="http://wiki.shopify.com/Theme_Settings">help page on theme settings</a> to learn more about how you can make your theme customizable.</p>
+</div>
+
+<fieldset>
+  <legend>General</legend>
+      
+  <h3>Logo Options</h3>
+  <table>
+    <tr>
+      <td><label for="use_logo">Use Custom Logo?</label></td>
+      <td><input type="checkbox" id="use_logo" name="use_logo" /></td>
+    </tr>
+    <tr>
+      <td><label for="logo_image">Custom Logo</label></td>
+      <td><input type="file" name="logo.png" id="logo_image" data-max-width="940" data-max-height="300" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><small>Maximum logo dimensions are 940px wide by 300px high.<br />Your uploaded file will be resized to fit within those constraints.<br />Need a full-width banner? Upload an image with a width of 940px, and a height of 300px or less.</small></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Home</legend>
+
+  <h3>Product Slider</h3>
+  <table>
+    <tr>
+      <td><label for="show_product_slider">Enable</label></td>
+      <td><input type="checkbox" id="show_product_slider" name="show_product_slider" /></td>
+    </tr>
+    <tr>
+      <td><label for="mini_slider_collection">Collection to use</label></td>
+      <td><select class="collection" name="mini_slider_collection" value="frontpage" /></td>
+    </tr>
+    <tr>
+      <td><label for="mini_slider_title">Title</label></td>
+      <td><input id="mini_slider_title" name="mini_slider_title" class="text" value="Products of the week" /></td>
+    </tr>
+    <tr>
+      <td><label for="mini_slider_limit">Item Limit</label></td>
+      <td>
+        <select name="mini_slider_limit" id="mini_slider_limit">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9" selected="selected">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+
+  <h3>Module: Product List</h3>
+  <table>
+    <tr>
+      <td><label for="show_product_list">Enable</label></td>
+      <td><input type="checkbox" id="show_product_list" name="show_product_list" value="1" checked="checked" /></td>
+    </tr>
+    <tr>
+      <td><label for="product_list_collection">Collection to use</label></td>
+      <td><select class="collection" name="product_list_collection" value="frontpage" /></td>
+    </tr>
+    <tr>
+      <td><label for="product_list_title">Title</label></td>
+      <td><input id="product_list_title" name="product_list_title" class="text" value="New products" /></td>
+    </tr>
+    <tr>
+      <td><label for="product_list_limit">Item Limit</label></td>
+      <td>
+        <select name="product_list_limit" id="product_list_limit">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9" selected="selected">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="hide_view_collection_link">Hide 'View collection' link</label></td>
+      <td><input type="checkbox" id="hide_view_collection_link" name="hide_view_collection_link" value="1" /></td>
+    </tr>
+  </table>
+  
+  <h3>Module: Collection List</h3>
+  <table>
+    <tr>
+      <td><label for="show_collection_list">Enable</label></td>
+      <td><input type="checkbox" id="show_collection_list" name="show_collection_list" /></td>
+    </tr>
+    <tr>
+      <td><label for="collection_list_ll">Link list to use</label></td>
+      <td><select id="collection_list_ll" class="linklist" name="collection_list_ll" /></td>
+    </tr>
+    <tr>
+      <td><label for="collection_list_title">Title</label></td>
+      <td><input id="collection_list_title" name="collection_list_title" class="text" value="Browse by Category" /></td>
+    </tr>
+  </table>  
+  
+  <h3>Module: Welcome text</h3>
+  <table>
+    <tr>
+      <td><label for="show_welcome_text">Enable</label></td>
+      <td><input type="checkbox" id="show_welcome_text" name="show_welcome_text" value="1" checked="checked" /></td>
+    </tr>
+    <tr>
+      <td><label for="welcome_text_page">Page to use</label></td>
+      <td><select id="welcome_text_page" class="page" name="welcome_text_page" value="frontpage" /></td>
+    </tr>
+  </table>
+
+  <h3>Module: Blog</h3>
+  <table>
+    <tr>
+      <td><label for="show_blog">Enable</label></td>
+      <td><input type="checkbox" id="show_blog" name="show_blog" value="1" checked="checked" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_blog">Blog</label></td>
+      <td><select class="blog" name="fp_blog" value="news" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_blog_title">Title</label></td>
+      <td><input id="fp_blog_title" name="fp_blog_title" class="text" value="From the blog" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_blog_limit">Item Limit</label></td>
+      <td>
+        <select name="fp_blog_limit" id="fp_blog_limit">
+          <option value="1">1</option>
+          <option value="2" selected="selected">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="fp_blog_rm_label">Read More Label</label></td>
+      <td><input id="fp_blog_rm_label" name="fp_blog_rm_label" class="text" value="Read more" /></td>
+    </tr>
+  </table>
+
+  <h3>Module: Browse</h3>
+  <table>
+    <tr>
+      <td><label for="show_browse">Enable</label></td>
+      <td><input type="checkbox" id="show_browse" name="show_browse" value="1" checked="checked" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_browse_label">Browse label</label></td>
+      <td><input id="fp_browse_label" name="fp_browse_label" class="text" value="Browse" /></td>
+    </tr>
+    <tr>
+      <td><label for="show_bb_vendor">Show browse by Vendor</label></td>
+      <td><input type="checkbox" id="show_bb_vendor" name="show_bb_vendor" value="1" checked="checked" /></td>
+    </tr>
+    <tr>
+      <td><label for="show_bb_category">Show browse by Category</label></td>
+      <td><input type="checkbox" id="show_bb_category" name="show_bb_category" value="1" checked="checked" /></td>
+    </tr>
+  </table>
+
+  <h3>Module: Link List 1</h3>
+  <table>
+    <tr>
+      <td><label for="show_link_list_1">Enable</label></td>
+      <td><input type="checkbox" id="show_link_list_1" name="show_link_list_1" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_link_list_1_label">Link List Label</label></td>
+      <td><input id="fp_link_list_1_label" name="fp_link_list_1_label" class="text" value="Special Collections" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_link_list_1">Link List</label></td>
+      <td><select class="linklist" name="fp_link_list_1" /></td>
+    </tr>
+  </table>
+
+  <h3>Module: Link List 2</h3>
+  <table>
+    <tr>
+      <td><label for="show_link_list_2">Enable</label></td>
+      <td><input type="checkbox" id="show_link_list_2" name="show_link_list_2" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_link_list_2_label">Link List Label</label></td>
+      <td><input id="fp_link_list_2_label" name="fp_link_list_2_label" class="text" value="Quick Links" /></td>
+    </tr>
+    <tr>
+      <td><label for="fp_link_list_2">Link List</label></td>
+      <td><select class="linklist" name="fp_link_list_2" /></td>
+    </tr>
+  </table>
+
+</fieldset>
+
+<fieldset>
+  <legend>Home — Slideshow</legend>
+  
+  <h3>Note: The optimal dimensions for your slideshow images are 580 wide by 385px high. If you use a video, grab embed code that will give your video a width of 884px.</h3>
+  
+  <h3>Options</h3>
+  <table>
+    <tr>
+      <td><label for="show_slideshow">Enable Slideshow</label></td>
+      <td><input type="checkbox" id="show_slideshow" name="show_slideshow" /></td>
+    </tr>
+    <tr>
+      <td><label for="slideshow_height">Customize height of slideshow</label></td>
+      <td><input type="text" class="text" id="slideshow_height" name="slideshow_height" value="490" />pixels high</td>
+    </tr>
+    <tr>
+      <td><label for="slideshow_auto">Auto-rotate slides?</label></td>
+       <td><input type="checkbox" id="slideshow_auto" name="slideshow_auto" value="1" checked="checked" /></td>
+     </tr>
+    <tr>
+      <td><label for="rotate_freq">Rotate frequency (seconds)</label></td>
+      <td>
+        <select name="rotate_freq" id="rotate_freq">
+          <option value="5000">5</option>
+          <option value="7000">7</option>
+          <option value="10000" selected="selected">10</option>
+          <option value="15000">15</option>
+          <option value="15000">30</option>
+        </select>
+      </td>
+    </tr> 
+  </table>
+  
+  <h3>Slide: 1</h3>
+  <table>
+    <tr>
+      <td><label for="slide_1">Enable</label></td>
+      <td><input type="checkbox" id="slide_1" name="slide_1" value="1" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_media_type">Media Type</label></td>
+      <td>
+        <select name="slide_1_media_type" id="slide_1_media_type">
+          <option value="image" selected="selected">Image</option>
+          <option value="video">Video</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_image">Background Image</label></td>
+      <td><input type="file" name="slide_1.jpg"  data-max-width="580" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_bg_color">Background Colour</label></td>
+      <td><input name="slide_1_bg_color" class="color" type="text" value="#000000" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_video">Video Embed Code</label></td>
+      <td><textarea id="slide_1_video" name="slide_1_video" class="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_link_type">Link Through Type</label></td>
+      <td>
+        <select name="slide_1_link_type" id="slide_1_link_type">
+          <option value="text_link">Text Link</option>
+          <option value="slide_link" selected="selected">Entire Slide</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_caption">Caption</label></td>
+      <td><input id="slide_1_caption" name="slide_1_caption" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_link_title">Link Title</label></td>
+      <td><input id="slide_1_link_title" name="slide_1_link_title" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_1_link_url">Link URL</label></td>
+      <td><input id="slide_1_link_url" name="slide_1_link_url" class="text long" /></td>
+    </tr>
+  </table>
+
+  <h3>Slide: 2</h3>
+  <table>
+    <tr>
+      <td><label for="slide_2">Enable</label></td>
+      <td><input type="checkbox" id="slide_2" name="slide_2" value="1" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_media_type">Media Type</label></td>
+      <td>
+        <select name="slide_2_media_type" id="slide_2_media_type">
+          <option value="image" selected="selected">Image</option>
+          <option value="video">Video</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_image">Background Image</label></td>
+      <td><input type="file" name="slide_2.jpg"  data-max-width="580" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_bg_color">Background Colour</label></td>
+      <td><input name="slide_2_bg_color" class="color" type="text" value="#000000" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_video">Video Embed Code</label></td>
+      <td><textarea id="slide_2_video" name="slide_2_video" class="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_link_type">Link Through Type</label></td>
+      <td>
+        <select name="slide_2_link_type" id="slide_2_link_type">
+          <option value="text_link">Text Link</option>
+          <option value="slide_link" selected="selected">Entire Slide</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_caption">Caption</label></td>
+      <td><input id="slide_2_caption" name="slide_2_caption" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_link_title">Link Title</label></td>
+      <td><input id="slide_2_link_title" name="slide_2_link_title" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_2_link_url">Link URL</label></td>
+      <td><input id="slide_2_link_url" name="slide_2_link_url" class="text long" /></td>
+    </tr>
+  </table>
+
+  <h3>Slide: 3</h3>
+  <table>
+    <tr>
+      <td><label for="slide_3">Enable</label></td>
+      <td><input type="checkbox" id="slide_3" name="slide_3" value="1" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_media_type">Media Type</label></td>
+      <td>
+        <select name="slide_3_media_type" id="slide_3_media_type">
+          <option value="image" selected="selected">Image</option>
+          <option value="video">Video</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_image">Background Image</label></td>
+      <td><input type="file" name="slide_3.jpg"  data-max-width="580" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_bg_color">Background Colour</label></td>
+      <td><input name="slide_3_bg_color" class="color" type="text" value="#000000" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_video">Video Embed Code</label></td>
+      <td><textarea id="slide_3_video" name="slide_3_video" class="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_link_type">Link Through Type</label></td>
+      <td>
+        <select name="slide_3_link_type" id="slide_3_link_type">
+          <option value="text_link">Text Link</option>
+          <option value="slide_link" selected="selected">Entire Slide</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_caption">Caption</label></td>
+      <td><input id="slide_3_caption" name="slide_3_caption" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_link_title">Link Title</label></td>
+      <td><input id="slide_3_link_title" name="slide_3_link_title" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_3_link_url">Link URL</label></td>
+      <td><input id="slide_3_link_url" name="slide_3_link_url" class="text long" /></td>
+    </tr>
+  </table>
+
+  <h3>Slide: 4</h3>
+  <table>
+    <tr>
+      <td><label for="slide_4">Enable</label></td>
+      <td><input type="checkbox" id="slide_4" name="slide_4" value="4" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_media_type">Media Type</label></td>
+      <td>
+        <select name="slide_4_media_type" id="slide_4_media_type">
+          <option value="image" selected="selected">Image</option>
+          <option value="video">Video</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_image">Background Image</label></td>
+      <td><input type="file" name="slide_4.jpg"  data-max-width="580" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_bg_color">Background Colour</label></td>
+      <td><input name="slide_4_bg_color" class="color" type="text" value="#000000" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_video">Video Embed Code</label></td>
+      <td><textarea id="slide_4_video" name="slide_4_video" class="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_link_type">Link Through Type</label></td>
+      <td>
+        <select name="slide_4_link_type" id="slide_4_link_type">
+          <option value="text_link">Text Link</option>
+          <option value="slide_link" selected="selected">Entire Slide</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_caption">Caption</label></td>
+      <td><input id="slide_4_caption" name="slide_4_caption" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_link_title">Link Title</label></td>
+      <td><input id="slide_4_link_title" name="slide_4_link_title" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_4_link_url">Link URL</label></td>
+      <td><input id="slide_4_link_url" name="slide_4_link_url" class="text long" /></td>
+    </tr>
+  </table>
+
+  <h3>Slide: 5</h3>
+  <table>
+    <tr>
+      <td><label for="slide_5">Enable</label></td>
+      <td><input type="checkbox" id="slide_5" name="slide_5" value="5" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_media_type">Media Type</label></td>
+      <td>
+        <select name="slide_5_media_type" id="slide_5_media_type">
+          <option value="image" selected="selected">Image</option>
+          <option value="video">Video</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_image">Background Image</label></td>
+      <td><input type="file" name="slide_5.jpg"  data-max-width="580" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_bg_color">Background Colour</label></td>
+      <td><input name="slide_5_bg_color" class="color" type="text" value="#000000" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_video">Video Embed Code</label></td>
+      <td><textarea id="slide_5_video" name="slide_5_video" class="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_link_type">Link Through Type</label></td>
+      <td>
+        <select name="slide_5_link_type" id="slide_5_link_type">
+          <option value="text_link">Text Link</option>
+          <option value="slide_link" selected="selected">Entire Slide</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_caption">Caption</label></td>
+      <td><input id="slide_5_caption" name="slide_5_caption" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_link_title">Link Title</label></td>
+      <td><input id="slide_5_link_title" name="slide_5_link_title" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_5_link_url">Link URL</label></td>
+      <td><input id="slide_5_link_url" name="slide_5_link_url" class="text long" /></td>
+    </tr>
+  </table>
+
+  <h3>Slide: 6</h3>
+  <table>
+    <tr>
+      <td><label for="slide_6">Enable</label></td>
+      <td><input type="checkbox" id="slide_6" name="slide_6" value="6" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_media_type">Media Type</label></td>
+      <td>
+        <select name="slide_6_media_type" id="slide_6_media_type">
+          <option value="image">Image</option>
+          <option value="video" selected="selected">Video</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_image">Background Image</label></td>
+      <td><input type="file" name="slide_6.jpg" data-max-width="580" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_bg_color">Background Colour</label></td>
+      <td><input name="slide_6_bg_color" class="color" type="text" value="#000000" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_video">Video Embed Code</label></td>
+      <td><textarea id="slide_6_video" name="slide_6_video" class="text" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_link_type">Link Through Type</label></td>
+      <td>
+        <select name="slide_6_link_type" id="slide_6_link_type">
+          <option value="text_link">Text Link</option>
+          <option value="slide_link" selected="selected">Entire Slide</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_caption">Caption</label></td>
+      <td><input id="slide_6_caption" name="slide_6_caption" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_link_title">Link Title</label></td>
+      <td><input id="slide_6_link_title" name="slide_6_link_title" class="text long" /></td>
+    </tr>
+    <tr>
+      <td><label for="slide_6_link_url">Link URL</label></td>
+      <td><input id="slide_6_link_url" name="slide_6_link_url" class="text long" /></td>
+    </tr>
+  </table>
+
+  <h3>Module: Collection List</h3>
+  <table>
+    <tr>
+      <td><label for="show_collection_list">Enable</label></td>
+      <td><input type="checkbox" id="show_collection_list" name="show_collection_list" /></td>
+    </tr>
+    <tr>
+      <td><label for="collection_list_ll">Link list to use</label></td>
+      <td><select id="collection_list_ll" class="linklist" name="collection_list_ll" /></td>
+    </tr>
+    <tr>
+      <td><label for="collection_list_title">Title</label></td>
+      <td><input id="collection_list_title" name="collection_list_title" class="text" value="Browse by Category" /></td>
+    </tr>
+  </table>  
+  
+  
+</fieldset>
+
