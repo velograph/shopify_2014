@@ -81,11 +81,49 @@ Example: the h2 element should have the same size and color in:
 
 </div><!-- #slideshow -->
 
-<div class="shop_calendar">
+<!-- START OF LATEST BLOG POSTS -->
+<div id="widget-latest-blog-posts" class="widget six columns shop_calendar">
 
-  testing
+  {% assign blog_handle = 'calendar' %}
+  {% assign how_many_articles_to_show = 5 %}
 
-</div>
+
+  <div class="widget-header">
+
+    <h3>Upcoming Events</h3>
+
+  </div><!-- .widget-header -->
+
+  <div class="latest-blog-posts-wrapper">
+
+    <ul class="latest-blog-posts-list">
+
+      {% for article in blogs[blog_handle].articles limit: how_many_articles_to_show %}
+        <li><h4>{{ article.title | link_to: article.url }}</h4> {{ article.excerpt }}</li>
+      {% endfor %}
+
+    </ul>
+
+    <!--  Simple script to sort blog posts by alpha. Found at: http://ecommerce.shopify.com/c/ecommerce-design/t/sort-a-blog-alphabetically-i-was-so-close-46449 -->
+    <script type="text/javascript">
+
+      // Sort the recipe listings
+      var mylist = $('.latest-blog-posts-list');
+      var listitems = mylist.children('li').get();
+
+      listitems.sort(function(a, b) {
+        var compA = $(a).text().toUpperCase();
+        var compB = $(b).text().toUpperCase();
+        return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+      });
+
+      $(listitems).appendTo(mylist);
+
+    </script>
+
+  </div><!-- .latest-blog-posts-wrapper -->
+
+</div><!-- #widget-latest-blog-posts .widget .six .columns .shop_calendar -->
 
 <div class="clear"></div>
 
