@@ -1,0 +1,74 @@
+<div id="collections-listing">
+
+  {% if linklists.featured-collections-bikes-frames.links.size > 0 %}
+    <ul>
+      {% for link in linklists.featured-collections-bikes-frames.links %}
+      {% assign collection = link.object %}
+      {% unless collection.handle == 'frontpage' %}
+
+      <li class="{{ collection.handle }}-collection eight columns">      
+
+      {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+        <div class="collection collection_portal">
+
+          <h2 class="portal_title">
+            <a href="{{ collection.url }}" title="browse {{ collection_title }}">{{ collection.title }}</a>
+          </h2>
+          <small class="collection_quantity">{{ collection.all_products_count }} {{ collection.all_products_count | pluralize: 'item', 'items' }}</small>
+
+          <div class="collection-image">
+
+            <a href="{{ collection.url }}" title="browse {{ collection_title }}">
+            {{ collection.products.first.featured_image | product_img_url: 'original' | img_tag: collection_title }}
+            </a>
+
+          </div><!-- end of .collection-image -->
+
+        </div><!-- end of .collection -->
+
+      </li>
+
+      {% endunless %}
+      {% endfor %}
+
+    </ul>{% else %}
+    {% endif %}
+
+  {% if linklists.featured-collections-other.links.size > 0 %}
+    <ul>
+      {% for link in linklists.featured-collections-other.links %}
+      {% assign collection = link.object %}
+      {% unless collection.handle == 'frontpage' %}
+
+      <li class="{{ collection.handle }}-collection one-third column">      
+
+      {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+        <div class="collection collection_portal">
+
+          <h2 class="portal_title">
+            <a href="{{ collection.url }}" title="browse {{ collection_title }}">{{ collection.title }}</a>
+          </h2>
+          <small class="collection_quantity">{{ collection.all_products_count }} {{ collection.all_products_count | pluralize: 'item', 'items' }}</small>
+
+          <div class="collection-image">
+
+            <a href="{{ collection.url }}" title="browse {{ collection_title }}">
+            {{ collection.products.first.featured_image | product_img_url: 'original' | img_tag: collection_title }}
+            </a>
+
+          </div><!-- end of .collection-image -->
+
+        </div><!-- end of .collection -->
+
+      </li>
+
+      {% endunless %}
+      {% endfor %}
+
+    </ul>{% else %}
+    {% endif %}
+
+</div><!-- end of #collection-listing -->
+
+<div class="clear"></div>
+

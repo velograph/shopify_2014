@@ -105,7 +105,7 @@ http://support.shopify.com/customer/portal/articles/75425 for details.
   {% endif %}
 
 
-<ul class="grid clearfix">
+<ul class="">
 {% for product in collection.products %}
   {% include 'product-grid-item' with 'six columns omega' %}
 {% else %}
@@ -121,6 +121,8 @@ http://support.shopify.com/customer/portal/articles/75425 for details.
 
 {% endpaginate %}
 </div>
+
+<div class="clear"></div>
 
 <script>
 /* Product Tag Filters - Good for any number of filters on any type of collection pages */

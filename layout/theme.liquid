@@ -72,16 +72,16 @@
 
   <div class="container">
 
-    <section class="top_utility">
+    <section class="offset-by-six ten top_utility">
       {% comment %}
       Older browsers don't support the HTML5 placeholder attribute, so it's a good idea to use JavaScript
       to show and hide the placeholder text.
       Have a look in assets/shop.js.liquid to see sample JavaScript for this.
       {% endcomment %}
       
-      <form action="/search" method="get" class="offset-by-four six columns search-form" role="search">
+      <form action="/search" method="get" class="search-form" role="search">
+        <input name="q" type="text" id="search-field" placeholder="Search..." class="hint" />
         <input type="submit" id="search-submit" value="" class="search" />
-        <input name="q" type="text" id="search-field" placeholder="Search store..." class="hint" />
       </form>
 
       {% if shop.customer_accounts_enabled %}
@@ -97,26 +97,26 @@
       </p>
       {% endif %}
       
+      <span class="utility_divider">/</span>
       {% comment %}
       Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
       Paypal Express Checkout and/or Google Checkout have special checkout buttons on the /cart page. Also,
       special instructions for the seller are entered on the /cart page.
       {% endcomment %}
 
-      <ul class="six columns checkout-cart">
-        <li>
-          <a href="/cart">Check out</a>
-        </li>
-        <li>
-          <a href="/cart">({{ cart.total_price | money }})</a>
-        </li>
-        <li>
-          <a href="/cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</a>
-        </li>
-        <li>
-          <a href="/cart">Your Cart</a>
-        </li>
-      </ul>
+      <div class="checkout-cart">
+        <ul>
+          <li>
+            <a href="/cart">Your Cart</a>
+          </li>
+          <li>
+            <a href="/cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</a>
+          </li>
+          <li>
+            <a href="/cart">({{ cart.total_price | money }})</a>
+          </li>
+        </ul>
+      </div>
 
     </section><!-- .top_utility -->
 
@@ -250,12 +250,16 @@
 
       <div class="four columns footer_contact">
 
-        <address>7953 SE 13th Ave<br />
-          Portland, OR 97206
-        </address>
-        <a href="mailto:shop@sellwoodcycle.com" alt="Shop email">&#115;&#104;&#111;&#112;&#064;&#115;&#101;&#108;&#108;&#119;&#111;&#111;&#100;&#099;&#121;&#099;&#108;&#101;&#046;&#099;&#111;&#109;</a>
-        <a href="tel:5032239392" alt="telephone">(503)233 - 9392</a>
-      </div>
+        <ul>
+
+          <li>7953 SE 13th Ave</li>
+          <li>Portland, OR 97202</li>
+          <li><a href="mailto:shop@sellwoodcycle.com" alt="Shop email">&#115;&#104;&#111;&#112;&#064;&#115;&#101;&#108;&#108;&#119;&#111;&#111;&#100;&#099;&#121;&#099;&#108;&#101;&#046;&#099;&#111;&#109;</a></li>
+          <li><a href="tel:5032239392" alt="telephone">(503)233 - 9392</a></li>
+
+        </ul>
+
+      </div><!-- .four .columns .footer_contact -->
 
       <div class="four columns footer_social">
 
@@ -317,17 +321,9 @@
 
       <div class="clear"></div>
 
-      {% if linklists.footer.links.size > 0 %}
-      <p role="navigation">
-      {% for link in linklists.footer.links %}
-        <a href="{{ link.url }}" title="{{ link.title }}"{% if link.active %} class="active"{% endif %}>{{ link.title }}</a>
-      {% endfor %}
-      </p>
-      {% endif %}
-      
-      <p role="contentinfo">Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
-
     </footer>
+
+    <p role="contentinfo" class="copyright">Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
 
     {% comment %}Shopify does not support Internet Explorer 6.{% endcomment %}
     <!--[if lt IE 7]>

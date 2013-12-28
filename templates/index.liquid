@@ -84,25 +84,18 @@ Example: the h2 element should have the same size and color in:
 <!-- START OF LATEST BLOG POSTS -->
 <div id="widget-latest-blog-posts" class="widget six columns shop_calendar">
 
-  {% assign blog_handle = 'calendar' %}
-  {% assign how_many_articles_to_show = 5 %}
+  <h3>Upcoming Events</h3>
 
+  <ul class="latest-blog-posts-list">
 
-  <div class="widget-header">
+    {% assign blog_handle = 'calendar' %}
+    {% assign how_many_articles_to_show = 5 %}
 
-    <h3>Upcoming Events</h3>
+    {% for article in blogs[blog_handle].articles limit: how_many_articles_to_show %}
+      <li><h4>{{ article.title | link_to: article.url }}</h4> {{ article.excerpt }}</li>
+    {% endfor %}
 
-  </div><!-- .widget-header -->
-
-  <div class="latest-blog-posts-wrapper">
-
-    <ul class="latest-blog-posts-list">
-
-      {% for article in blogs[blog_handle].articles limit: how_many_articles_to_show %}
-        <li><h4>{{ article.title | link_to: article.url }}</h4> {{ article.excerpt }}</li>
-      {% endfor %}
-
-    </ul>
+  </ul>
 
     <!--  Simple script to sort blog posts by alpha. Found at: http://ecommerce.shopify.com/c/ecommerce-design/t/sort-a-blog-alphabetically-i-was-so-close-46449 -->
     <script type="text/javascript">
@@ -121,36 +114,24 @@ Example: the h2 element should have the same size and color in:
 
     </script>
 
-  </div><!-- .latest-blog-posts-wrapper -->
-
 </div><!-- #widget-latest-blog-posts .widget .six .columns .shop_calendar -->
 
 <div class="clear"></div>
 
 {% endif %}
-{% assign page = pages.frontpage %}
 
-<div class="rte">
-  {{ page.content }}
+<div class="six columns dotted_divider">
+  &nbsp;
 </div>
 
-{% assign collection = collections.frontpage %}
+<div class="four columns divider_title">
 
-<h2>Featured Bikes!</h2>
-<ul class="grid clearfix">
-{% for product in collection.products %}
-  {% include 'product-grid-item' with 'eight columns' %}
-{% else %}
-<p>You have no products in your Frontpage collection. <a href="http://www.shopify.com/admin/custom_collections">Add some.</a></p>
-{% endfor %}
-</ul>
-{% assign collection = collections.new-frames %}
+  <h2>Browse our Inventory</h2>
 
-<h2>New Frames!</h2>
-<ul class="grid clearfix">
-{% for product in collection.products %}
-  {% include 'product-grid-item' with 'eight columns' %}
-{% else %}
-<p>You have no products in your Frontpage collection. <a href="http://www.shopify.com/admin/custom_collections">Add some.</a></p>
-{% endfor %}
-</ul>
+</div>
+
+<div class="six columns dotted_divider">
+  &nbsp;
+</div>
+
+{% include 'snippet-list-collections' %}
