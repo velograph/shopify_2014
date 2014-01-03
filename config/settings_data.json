@@ -1,9 +1,37 @@
 {
-  "current": "Slate",
   "presets": {
-    "Slate": {
-      "use_logo": false,
-      "customer_layout": "theme"
-    }
+      "image_1_link": "/admin/themes/current/settings",
+      "image_1_alt": "",
+      "image_2_link": "/admin/themes/current/settings",
+      "image_2_alt": "",
+      "image_3_link": "",
+      "image_3_alt": "",
+      "image_4_link": "",
+      "image_4_alt": "",
+      "image_5_link": "",
+      "image_5_alt": "",
+      "image_6_link": "",
+      "image_6_alt": "",
+      "image_7_link": "",
+      "image_7_alt": "",
+      "image_8_link": "",
+      "image_8_alt": "",
+      "image_9_link": "",
+      "image_9_alt": "",
+      "image_10_link": "",
+      "image_10_alt": "",
+      "slideshow_speed": "5000",
+      "slideshow_transition": "fade",
+      "display_slideshow": true,
+      "display_slideshow_1": true,
+      "display_slideshow_2": true,
+      "display_slideshow_3": false,
+      "display_slideshow_4": false,
+      "display_slideshow_5": false,
+      "display_slideshow_6": false,
+      "display_slideshow_7": false,
+      "display_slideshow_8": false,
+      "display_slideshow_9": false,
+      "display_slideshow_10": false,
   }
 }

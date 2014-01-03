@@ -22,6 +22,345 @@
 </fieldset>
 
 <fieldset>
+  <legend>Home — Slideshow</legend>
+  <table>
+    <tr>
+      <td colspan="2">
+        <strong>IMPORTANT:</strong> For best results, upload images that are at least 966px wide. Try to keep your slideshow images the same size.
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow">Enable slideshow?</label></th>
+      <td><input type="checkbox" id="display_slideshow" name="display_slideshow" value="0" /></td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_speed">Show slideshow images for</label></th>
+      <td>
+        <select name="slideshow_speed" id="slideshow_speed">
+          <option value="8000">8 seconds</option>
+          <option value="7000">7 seconds</option>
+          <option value="6000">6 seconds</option>
+          <option value="5000" selected="selected">5 seconds</option>
+          <option value="4000">4 seconds</option>
+          <option value="3000">3 seconds</option>
+          <option value="2000">2 seconds</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_transition">Slideshow transition effect:</label></th>
+      <td>
+        <select name="slideshow_transition" id="slideshow_transition">
+          <option value="slide">Slide</option>
+          <option value="fade">Fade</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_1">Display Slideshow Image 1?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_1" name="display_slideshow_1" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_1">Slideshow Image 1</label></th>
+      <td>
+        <input type="file" id="slideshow_1" name="slideshow_1.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_1_link">URL for Image 1 click</label></th>
+      <td>
+        <input type="text" id="image_1_link" name="image_1_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_1_alt">ALT for Image 1</label></th>
+      <td>
+        <input type="text" id="image_1_alt" name="image_1_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_1_caption">Caption for Image 1</label></th>
+      <td>
+        <input type="text" id="image_1_caption" name="image_1_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_2">Display Slideshow Image 2?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_2" name="display_slideshow_2" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_2">Slideshow Image 2</label></th>
+      <td>
+        <input type="file" id="slideshow_2" name="slideshow_2.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_2_link">URL for Image 2 click</label></th>
+      <td>
+        <input type="text" id="image_2_link" name="image_2_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_2_alt">ALT for Image 2</label></th>
+      <td>
+        <input type="text" id="image_2_alt" name="image_2_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_2_caption">Caption for Image 2</label></th>
+      <td>
+        <input type="text" id="image_2_caption" name="image_2_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_3">Display Slideshow Image 3?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_3" name="display_slideshow_3" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_3">Slideshow Image 3</label></th>
+      <td>
+        <input type="file" id="slideshow_3" name="slideshow_3.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_3_link">URL for Image 3 click</label></th>
+      <td>
+        <input type="text" id="image_3_link" name="image_3_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_3_alt">ALT for Image 3</label></th>
+      <td>
+        <input type="text" id="image_3_alt" name="image_3_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_3_caption">Caption for Image 3</label></th>
+      <td>
+        <input type="text" id="image_3_caption" name="image_3_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_4">Display Slideshow Image 4?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_4" name="display_slideshow_4" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_4">Slideshow Image 4</label></th>
+      <td>
+        <input type="file" id="slideshow_4" name="slideshow_4.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_4_link">URL for Image 4 click</label></th>
+      <td>
+        <input type="text" id="image_4_link" name="image_4_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_4_alt">ALT for Image 4</label></th>
+      <td>
+        <input type="text" id="image_4_alt" name="image_4_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_4_caption">Caption for Image 4</label></th>
+      <td>
+        <input type="text" id="image_4_caption" name="image_4_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_5">Display Slideshow Image 5?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_5" name="display_slideshow_5" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_5">Slideshow Image 5</label></th>
+      <td>
+        <input type="file" id="slideshow_5" name="slideshow_5.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_5_link">URL for Image 5 click</label></th>
+      <td>
+        <input type="text" id="image_5_link" name="image_5_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_5_alt">ALT for Image 5</label></th>
+      <td>
+        <input type="text" id="image_5_alt" name="image_5_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_5_caption">Caption for Image 5</label></th>
+      <td>
+        <input type="text" id="image_5_caption" name="image_5_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_6">Display Slideshow Image 6?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_6" name="display_slideshow_6" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_6">Slideshow Image 6</label></th>
+      <td>
+        <input type="file" id="slideshow_6" name="slideshow_6.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_6_link">URL for Image 6 click</label></th>
+      <td>
+        <input type="text" id="image_6_link" name="image_6_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_6_alt">ALT for Image 6</label></th>
+      <td>
+        <input type="text" id="image_6_alt" name="image_6_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_6_caption">Caption for Image 6</label></th>
+      <td>
+        <input type="text" id="image_6_caption" name="image_6_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_7">Display Slideshow Image 7?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_7" name="display_slideshow_7" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_7">Slideshow Image 7</label></th>
+      <td>
+        <input type="file" id="slideshow_7" name="slideshow_7.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_7_link">URL for Image 7 click</label></th>
+      <td>
+        <input type="text" id="image_7_link" name="image_7_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_7_alt">ALT for Image 7</label></th>
+      <td>
+        <input type="text" id="image_7_alt" name="image_7_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_7_caption">Caption for Image 7</label></th>
+      <td>
+        <input type="text" id="image_7_caption" name="image_7_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_8">Display Slideshow Image 8?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_8" name="display_slideshow_8" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_8">Slideshow Image 8</label></th>
+      <td>
+        <input type="file" id="slideshow_8" name="slideshow_8.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_8_link">URL for Image 8 click</label></th>
+      <td>
+        <input type="text" id="image_8_link" name="image_8_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_8_alt">ALT for Image 8</label></th>
+      <td>
+        <input type="text" id="image_8_alt" name="image_8_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_8_caption">Caption for Image 8</label></th>
+      <td>
+        <input type="text" id="image_8_caption" name="image_8_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_9">Display Slideshow Image 9?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_9" name="display_slideshow_9" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_9">Slideshow Image 9</label></th>
+      <td>
+        <input type="file" id="slideshow_9" name="slideshow_9.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_9_link">URL for Image 9 click</label></th>
+      <td>
+        <input type="text" id="image_9_link" name="image_9_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_9_alt">ALT for Image 9</label></th>
+      <td>
+        <input type="text" id="image_9_alt" name="image_9_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_9_caption">Caption for Image 9</label></th>
+      <td>
+        <input type="text" id="image_9_caption" name="image_9_caption" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_slideshow_10">Display Slideshow Image 10?</label></th>
+      <td>
+        <input type="checkbox" id="display_slideshow_10" name="display_slideshow_10" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_10">Slideshow Image 10</label></th>
+      <td>
+        <input type="file" id="slideshow_10" name="slideshow_10.jpg" data-max-width="966" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_10_link">URL for Image 10 click</label></th>
+      <td>
+        <input type="text" id="image_10_link" name="image_10_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_10_alt">ALT for Image 10</label></th>
+      <td>
+        <input type="text" id="image_10_alt" name="image_10_alt" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_10_caption">Caption for Image 10</label></th>
+      <td>
+        <input type="text" id="image_10_caption" name="image_10_caption" value="" />
+      </td>
+    </tr>
+  </table>
+</fieldset>
+
+
+<fieldset>
   <legend>Home</legend>
 
   <h3>Product Slider</h3>
@@ -228,357 +567,5 @@
     </tr>
   </table>
 
-</fieldset>
-
-<fieldset>
-  <legend>Home — Slideshow</legend>
-  
-  <h3>Note: The optimal dimensions for your slideshow images are 580 wide by 385px high. If you use a video, grab embed code that will give your video a width of 884px.</h3>
-  
-  <h3>Options</h3>
-  <table>
-    <tr>
-      <td><label for="show_slideshow">Enable Slideshow</label></td>
-      <td><input type="checkbox" id="show_slideshow" name="show_slideshow" /></td>
-    </tr>
-    <tr>
-      <td><label for="slideshow_height">Customize height of slideshow</label></td>
-      <td><input type="text" class="text" id="slideshow_height" name="slideshow_height" value="490" />pixels high</td>
-    </tr>
-    <tr>
-      <td><label for="slideshow_auto">Auto-rotate slides?</label></td>
-       <td><input type="checkbox" id="slideshow_auto" name="slideshow_auto" value="1" checked="checked" /></td>
-     </tr>
-    <tr>
-      <td><label for="rotate_freq">Rotate frequency (seconds)</label></td>
-      <td>
-        <select name="rotate_freq" id="rotate_freq">
-          <option value="5000">5</option>
-          <option value="7000">7</option>
-          <option value="10000" selected="selected">10</option>
-          <option value="15000">15</option>
-          <option value="15000">30</option>
-        </select>
-      </td>
-    </tr> 
-  </table>
-  
-  <h3>Slide: 1</h3>
-  <table>
-    <tr>
-      <td><label for="slide_1">Enable</label></td>
-      <td><input type="checkbox" id="slide_1" name="slide_1" value="1" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_media_type">Media Type</label></td>
-      <td>
-        <select name="slide_1_media_type" id="slide_1_media_type">
-          <option value="image" selected="selected">Image</option>
-          <option value="video">Video</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_image">Background Image</label></td>
-      <td><input type="file" name="slide_1.jpg"  data-max-width="580" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_bg_color">Background Colour</label></td>
-      <td><input name="slide_1_bg_color" class="color" type="text" value="#000000" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_video">Video Embed Code</label></td>
-      <td><textarea id="slide_1_video" name="slide_1_video" class="text" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_link_type">Link Through Type</label></td>
-      <td>
-        <select name="slide_1_link_type" id="slide_1_link_type">
-          <option value="text_link">Text Link</option>
-          <option value="slide_link" selected="selected">Entire Slide</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_caption">Caption</label></td>
-      <td><input id="slide_1_caption" name="slide_1_caption" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_link_title">Link Title</label></td>
-      <td><input id="slide_1_link_title" name="slide_1_link_title" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_1_link_url">Link URL</label></td>
-      <td><input id="slide_1_link_url" name="slide_1_link_url" class="text long" /></td>
-    </tr>
-  </table>
-
-  <h3>Slide: 2</h3>
-  <table>
-    <tr>
-      <td><label for="slide_2">Enable</label></td>
-      <td><input type="checkbox" id="slide_2" name="slide_2" value="1" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_media_type">Media Type</label></td>
-      <td>
-        <select name="slide_2_media_type" id="slide_2_media_type">
-          <option value="image" selected="selected">Image</option>
-          <option value="video">Video</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_image">Background Image</label></td>
-      <td><input type="file" name="slide_2.jpg"  data-max-width="580" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_bg_color">Background Colour</label></td>
-      <td><input name="slide_2_bg_color" class="color" type="text" value="#000000" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_video">Video Embed Code</label></td>
-      <td><textarea id="slide_2_video" name="slide_2_video" class="text" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_link_type">Link Through Type</label></td>
-      <td>
-        <select name="slide_2_link_type" id="slide_2_link_type">
-          <option value="text_link">Text Link</option>
-          <option value="slide_link" selected="selected">Entire Slide</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_caption">Caption</label></td>
-      <td><input id="slide_2_caption" name="slide_2_caption" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_link_title">Link Title</label></td>
-      <td><input id="slide_2_link_title" name="slide_2_link_title" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_2_link_url">Link URL</label></td>
-      <td><input id="slide_2_link_url" name="slide_2_link_url" class="text long" /></td>
-    </tr>
-  </table>
-
-  <h3>Slide: 3</h3>
-  <table>
-    <tr>
-      <td><label for="slide_3">Enable</label></td>
-      <td><input type="checkbox" id="slide_3" name="slide_3" value="1" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_media_type">Media Type</label></td>
-      <td>
-        <select name="slide_3_media_type" id="slide_3_media_type">
-          <option value="image" selected="selected">Image</option>
-          <option value="video">Video</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_image">Background Image</label></td>
-      <td><input type="file" name="slide_3.jpg"  data-max-width="580" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_bg_color">Background Colour</label></td>
-      <td><input name="slide_3_bg_color" class="color" type="text" value="#000000" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_video">Video Embed Code</label></td>
-      <td><textarea id="slide_3_video" name="slide_3_video" class="text" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_link_type">Link Through Type</label></td>
-      <td>
-        <select name="slide_3_link_type" id="slide_3_link_type">
-          <option value="text_link">Text Link</option>
-          <option value="slide_link" selected="selected">Entire Slide</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_caption">Caption</label></td>
-      <td><input id="slide_3_caption" name="slide_3_caption" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_link_title">Link Title</label></td>
-      <td><input id="slide_3_link_title" name="slide_3_link_title" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_3_link_url">Link URL</label></td>
-      <td><input id="slide_3_link_url" name="slide_3_link_url" class="text long" /></td>
-    </tr>
-  </table>
-
-  <h3>Slide: 4</h3>
-  <table>
-    <tr>
-      <td><label for="slide_4">Enable</label></td>
-      <td><input type="checkbox" id="slide_4" name="slide_4" value="4" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_media_type">Media Type</label></td>
-      <td>
-        <select name="slide_4_media_type" id="slide_4_media_type">
-          <option value="image" selected="selected">Image</option>
-          <option value="video">Video</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_image">Background Image</label></td>
-      <td><input type="file" name="slide_4.jpg"  data-max-width="580" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_bg_color">Background Colour</label></td>
-      <td><input name="slide_4_bg_color" class="color" type="text" value="#000000" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_video">Video Embed Code</label></td>
-      <td><textarea id="slide_4_video" name="slide_4_video" class="text" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_link_type">Link Through Type</label></td>
-      <td>
-        <select name="slide_4_link_type" id="slide_4_link_type">
-          <option value="text_link">Text Link</option>
-          <option value="slide_link" selected="selected">Entire Slide</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_caption">Caption</label></td>
-      <td><input id="slide_4_caption" name="slide_4_caption" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_link_title">Link Title</label></td>
-      <td><input id="slide_4_link_title" name="slide_4_link_title" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_4_link_url">Link URL</label></td>
-      <td><input id="slide_4_link_url" name="slide_4_link_url" class="text long" /></td>
-    </tr>
-  </table>
-
-  <h3>Slide: 5</h3>
-  <table>
-    <tr>
-      <td><label for="slide_5">Enable</label></td>
-      <td><input type="checkbox" id="slide_5" name="slide_5" value="5" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_media_type">Media Type</label></td>
-      <td>
-        <select name="slide_5_media_type" id="slide_5_media_type">
-          <option value="image" selected="selected">Image</option>
-          <option value="video">Video</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_image">Background Image</label></td>
-      <td><input type="file" name="slide_5.jpg"  data-max-width="580" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_bg_color">Background Colour</label></td>
-      <td><input name="slide_5_bg_color" class="color" type="text" value="#000000" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_video">Video Embed Code</label></td>
-      <td><textarea id="slide_5_video" name="slide_5_video" class="text" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_link_type">Link Through Type</label></td>
-      <td>
-        <select name="slide_5_link_type" id="slide_5_link_type">
-          <option value="text_link">Text Link</option>
-          <option value="slide_link" selected="selected">Entire Slide</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_caption">Caption</label></td>
-      <td><input id="slide_5_caption" name="slide_5_caption" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_link_title">Link Title</label></td>
-      <td><input id="slide_5_link_title" name="slide_5_link_title" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_5_link_url">Link URL</label></td>
-      <td><input id="slide_5_link_url" name="slide_5_link_url" class="text long" /></td>
-    </tr>
-  </table>
-
-  <h3>Slide: 6</h3>
-  <table>
-    <tr>
-      <td><label for="slide_6">Enable</label></td>
-      <td><input type="checkbox" id="slide_6" name="slide_6" value="6" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_media_type">Media Type</label></td>
-      <td>
-        <select name="slide_6_media_type" id="slide_6_media_type">
-          <option value="image">Image</option>
-          <option value="video" selected="selected">Video</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_image">Background Image</label></td>
-      <td><input type="file" name="slide_6.jpg" data-max-width="580" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_bg_color">Background Colour</label></td>
-      <td><input name="slide_6_bg_color" class="color" type="text" value="#000000" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_video">Video Embed Code</label></td>
-      <td><textarea id="slide_6_video" name="slide_6_video" class="text" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_link_type">Link Through Type</label></td>
-      <td>
-        <select name="slide_6_link_type" id="slide_6_link_type">
-          <option value="text_link">Text Link</option>
-          <option value="slide_link" selected="selected">Entire Slide</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_caption">Caption</label></td>
-      <td><input id="slide_6_caption" name="slide_6_caption" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_link_title">Link Title</label></td>
-      <td><input id="slide_6_link_title" name="slide_6_link_title" class="text long" /></td>
-    </tr>
-    <tr>
-      <td><label for="slide_6_link_url">Link URL</label></td>
-      <td><input id="slide_6_link_url" name="slide_6_link_url" class="text long" /></td>
-    </tr>
-  </table>
-
-  <h3>Module: Collection List</h3>
-  <table>
-    <tr>
-      <td><label for="show_collection_list">Enable</label></td>
-      <td><input type="checkbox" id="show_collection_list" name="show_collection_list" /></td>
-    </tr>
-    <tr>
-      <td><label for="collection_list_ll">Link list to use</label></td>
-      <td><select id="collection_list_ll" class="linklist" name="collection_list_ll" /></td>
-    </tr>
-    <tr>
-      <td><label for="collection_list_title">Title</label></td>
-      <td><input id="collection_list_title" name="collection_list_title" class="text" value="Browse by Category" /></td>
-    </tr>
-  </table>  
-  
-  
 </fieldset>
 

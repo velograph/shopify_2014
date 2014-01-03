@@ -280,116 +280,6 @@ nav[role=top_level_main_menu] {
   text-align: center;
 }
 
-/* Slideshow */
-#slideshow {
-  padding: 0;
-  text-align: center;
-}
-
-#slideshow-container {
-  width: 580px;
-  height: 385px;
-  overflow: hidden;
-  background-color: transparent;
-  /* Addresses IE 6 + 7 overflow bug */
-  *position: relative;
-  margin: 0 auto;
-}
-
-#slides {
-  display: block;
-  height: 385px;
-  min-width: 580px;
-  margin: 0;
-  padding: 0;
-}
-
-.slide {
-  width: 580px;
-  height: 385px;
-  display: block;
-  float: left;
-  background-color: rgba(255,255,255,0.9);
-  position: relative;
-}                   
-
-.slide-link-through {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1337;
-}
-
-.slide-caption {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 580px;
-  padding: 25px 20px;
-}
-
-.lt-ie9 .slide-caption { background: url('{{ 'ie-caption-bg.png' | asset_url }}') repeat transparent; }
-
-.slide-caption h2 {
-  font-size: 39px;
-  line-height: 1.3;
-  margin: 0;
-  margin-left: -33px;
-}
-
-a.slide-link {
-  font-size: 20px;
-  border-bottom: 1px solid #ffffff;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
-  padding-bottom:1px;
-  margin-top:16px;
-  margin-bottom:10px;
-  margin-left:-33px;
-  color:#ffffff;
-  display:inline-block;
-  /* Necessary for inline-block in IE */
-  zoom: 1;
-  *display: inline;
-}
-
-#slideshow-controls {
-  display:inline-block;
-  list-style-type:none;
-  margin:30px 0 0 0;
-  padding:0;
-  /* Necessary for inline-block in IE */
-  zoom: 1;
-  *display: inline;
-}
-
-#slideshow-controls li:first-child {
-  margin-left:0;
-}
-
-.slide-control {
-  float:left;
-  display:block;
-  height:9px;
-  width:9px;
-  padding:0 3px;
-  cursor:pointer;
-  font-size:24px;
-  top:-7px \9;
-  position:relative \9;
-  font-size:38px \9;
-}
-
-.lt-ie9 .slide-control {
-  top:-7px;
-  position:relative;
-  font-size:38px;
-}
-
-.slide-control.active {
-  color:#08c;
-}
 
 /* Home Page Calendar */
 .shop_calendar {
@@ -547,3 +437,24 @@ a.slide-link {
           }
         }
 
+
+.slideshow {
+  height: 240px;
+  margin-bottom: 2rem;
+  .slide {
+    h2 {
+      background: rgba(0,0,0,.75);
+      bottom: 0;
+      color: #fafafa;
+      margin: 0;
+      padding: .5rem 0 .5rem 1rem;
+      position: absolute;
+      width: 100%;
+    }
+    a {
+      height: 240px;
+      position: absolute;
+      width: 580px;
+    }
+  }
+}

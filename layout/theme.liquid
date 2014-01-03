@@ -24,14 +24,7 @@
 
   {{ 'skeleton.css' | asset_url | stylesheet_tag }}
   {{ 'style.scss.css' | asset_url | stylesheet_tag }}
-
-  <script>
-  var slideshow = {{ settings.show_slideshow }},
-      slideshow_auto = {{ settings.slideshow_auto }},
-      slideshow_speed = {{ settings.rotate_freq }}, 
-      product_image_w_to_h_ratio = {{ settings.product_img_w_to_h_ratio }},
-      shop_url = '{{ shop.url }}';
-  </script>
+  {{ 'shop.css' | asset_url | stylesheet_tag }}
 
   <!--[if lt IE 9]>
   {{ '//html5shiv.googlecode.com/svn/trunk/html5.js' | script_tag }}
@@ -47,6 +40,7 @@
   We will get rid of that depency: 
   https://github.com/Shopify/shopify/issues/3732
   {% endcomment %}
+
   <!--[if lt IE 8]>
   {{ 'json2.js' | asset_url | script_tag }}
   <![endif]-->
@@ -56,6 +50,22 @@
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' | script_tag }}
   {{ '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js' | script_tag }}
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' | script_tag }}
+  {{ 'flexslider.css' | asset_url | stylesheet_tag }}
+  {{ 'jquery.flexslider.js' | asset_url | script_tag }}
+  {{ 'jquery.flexslider-min.js' | asset_url | script_tag }}
+
+  {% if settings.display_slideshow %}
+    <script>
+      $(window).load(function() {
+        $('.flexslider').flexslider({
+          animation: "fade",
+          controlsContainer: ".flex-container"
+        });
+      });
+    </script>
+  {% endif %}
 
 </head>
 
@@ -331,8 +341,10 @@
     <![endif]-->
     
   </div><!-- end of #container -->
-  
+  {% comment %} 
+  I think this is uneccesary
   {{ 'shop.js'  | asset_url | script_tag }}
+  {% endcomment %} 
 
 </body>
 </html>
