@@ -30,31 +30,35 @@
   {{ '//html5shiv.googlecode.com/svn/trunk/html5.js' | script_tag }}
   <![endif]-->
 
-  {% if template contains 'customers' %}
-  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
-  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
-  {% endif %}
-  
   {% comment %}
   Needed when shopify_common.js is used.
   We will get rid of that depency: 
   https://github.com/Shopify/shopify/issues/3732
   {% endcomment %}
+  {% if template contains 'customers' %}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
 
   <!--[if lt IE 8]>
   {{ 'json2.js' | asset_url | script_tag }}
   <![endif]-->
 
-  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' | script_tag }}
   {{ '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js' | script_tag }}
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
-  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' | script_tag }}
+  {% comment %}
+  Script and CSS for toggler menu
+  {% endcomment %}
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  {{ 'site_scripts.js' | asset_url | script_tag }}
+
+  {% comment %}
+  Scripts and CSS for the homepage slider
   {{ 'flexslider.css' | asset_url | stylesheet_tag }}
   {{ 'jquery.flexslider.js' | asset_url | script_tag }}
   {{ 'jquery.flexslider-min.js' | asset_url | script_tag }}
+  {% endcomment %}
 
   {% if settings.display_slideshow %}
     <script>
@@ -66,11 +70,16 @@
       });
     </script>
   {% endif %}
+  <script>
+    $(function() {
+      $( "#mobile_menu" ).accordion();
+    });
+  </script>
 
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
-
+  
   <!-- Headings Test 
   <h1>Heading 1</h1>
   <h2>Heading 2</h2>
@@ -152,7 +161,7 @@
         </a><!-- #logo -->
       </div>
 
-      <nav role="top_level_main_menu" class="nav">
+      <nav role="top_level_main_menu" class="nav full_menu">
         <ul class="nav">
           {% for link in linklists.main-menu.links %}
           {% assign has_sub_menu = false %}
@@ -194,7 +203,7 @@
         </ul>
       </nav>
 
-      <nav role="bottom_level_main_menu" class="nav">
+      <nav role="bottom_level_main_menu" class="nav full_menu">
         <ul class="nav">
           {% for link in linklists.bottom-level-main-menu.links %}
           {% assign has_sub_menu = false %}
@@ -239,6 +248,24 @@
       <div class="clear"></div>
 
     </header>
+
+    <div id="mobile_menu_container" class="sixteen columns mobile_menu">
+      <div class="mobile_menu_list" style="display: none;">
+        <ul class="nav">
+          {% for link in linklists.mobile-menu.links %}
+          <li class="mobile_link{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}{% if current_tags contains tag %} active{% endif %}">
+            {{ link.title | link_to: link.url }}
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="clear"></div>
+      </div>
+
+      <div class="menu_button_container">
+        <div id="button" class="mobile_menu_text">Menu</div>
+        <div class="arrow_down"></div>
+      </div><!-- #button .mobile_menu_text -->
+    </div><!-- .menu_button_container -->
 
     <div class="clear"></div>
 

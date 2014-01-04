@@ -258,6 +258,50 @@ nav[role=top_level_main_menu] {
   }
 }
 
+#mobile_menu_container {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.mobile_menu {
+  cursor: pointer;
+  text-align: center;
+  width: 50px;
+  .menu_button_container {
+    border-top: 1px solid #f70;
+  }
+  .mobile_menu_text {
+    background: #f70;
+    margin: 0 auto;
+    padding: .25rem 0;
+    width: 50px;
+  }
+  .arrow_down {
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 15px solid #f70;
+    height: 0;
+    margin: 0 auto;
+    width: 0;
+  }
+  li.mobile_link {
+    float: left;
+    text-align: center;
+    width: 50%;
+  }
+  li.last {
+    width: 100%;
+  }
+  a {
+    color: #fff;
+    font-family: 'oswaldRegular';
+  }
+  a:hover {
+    border-bottom: 2px solid #08c;
+    text-decoration: none;
+  }
+}
+
 
 /* 4. Main Content Area
 ================================================== */
@@ -423,25 +467,65 @@ nav[role=top_level_main_menu] {
 .copyright {
   text-align: center;
 }
-	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-        @media only screen and (min-width: 480px) and (max-width: 767px) {
-          #slideshow-container {
-            width: 300px !important;
-          }
-        }
 
-	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-        @media only screen and (max-width: 479px) {
-          #slideshow-container {
-            width: 300px !important;
-          }
-        }
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .top_utility {
+    .search-form {
+      margin-bottom: 1rem;
+    }
+    .utility_divider {
+      display: none;
+    }
+  }
+  .header {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .nav.full_menu {
+    display: none;
+  }
+  #mobile_menu_container {
+    display: block;
+  }
+
+  #slideshow-container {
+    width: 300px !important;
+  }
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  .top_utility {
+    .search-form {
+      margin-bottom: 1rem;
+    }
+    .utility_divider {
+      display: none;
+    }
+  }
+  .header {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .nav.full_menu {
+    display: none;
+  }
+  #mobile_menu_container {
+    display: block;
+  }
+  #slideshow-container {
+    width: 300px !important;
+  }
+}
 
 
 .slideshow {
-  height: 240px;
   margin-bottom: 2rem;
+  position: relative;
   .slide {
+    position: relative;
     h2 {
       background: rgba(0,0,0,.75);
       bottom: 0;
@@ -458,3 +542,4 @@ nav[role=top_level_main_menu] {
     }
   }
 }
+
