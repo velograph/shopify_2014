@@ -1,3 +1,13 @@
+/* Credits
+================================================== 
+
+* Site design and development by Jason Britton http://velograph.net
+* Entypo pictograms by Daniel Bruce — www.entypo.com
+
+*/
+
+
+
 /* 1.  Font Families
 ================================================== */
 
@@ -238,7 +248,7 @@ nav[role=bottom_level_main_menu] {
     li:hover ul {
       display: block;
     }
-    a {
+    a, a:visited {
       color: #fff;
       font-family: 'oswaldLight';
       margin-left: 1.25rem;
@@ -289,10 +299,7 @@ nav[role=top_level_main_menu] {
     text-align: center;
     width: 50%;
   }
-  li.last {
-    width: 100%;
-  }
-  a {
+  a, a:visited {
     color: #fff;
     font-family: 'oswaldRegular';
   }
@@ -312,6 +319,28 @@ nav[role=top_level_main_menu] {
 
 .breadcrumbs {
   font-family: 'oswaldRegular';
+}
+
+.slideshow {
+  margin-bottom: 2rem;
+  position: relative;
+  .slide {
+    position: relative;
+    h2 {
+      background: rgba(0,0,0,.75);
+      bottom: 0;
+      color: #fafafa;
+      margin: 0;
+      padding: .5rem 0 .5rem 1rem;
+      position: absolute;
+      width: 100%;
+    }
+    a {
+      height: 240px;
+      position: absolute;
+      width: 580px;
+    }
+  }
 }
 
 /* Dotted Dividers */
@@ -356,9 +385,12 @@ nav[role=top_level_main_menu] {
   }
   img {
     border: 2px solid #fff;
+    border-radius: 2px;
     transition: opacity .2s linear;
+    vertical-align: top;
   }
   img:hover {
+    border: 2px solid #fff;
     opacity: .5;
   }
   h2, .collection_quantity {
@@ -366,17 +398,10 @@ nav[role=top_level_main_menu] {
   }
 }
 
+/* Sub-Collection Listings */
 .prod-price {
   display: block;
   font-style: italic;
-}
-
-.collection-image {
-  border: 2px solid #fff;
-  border-radius: 2px;
-  img {
-    vertical-align: top;
-  }
 }
 
   
@@ -464,7 +489,7 @@ nav[role=top_level_main_menu] {
 
   }
 
-.copyright {
+.copyright_powers {
   text-align: center;
 }
 
@@ -472,8 +497,10 @@ nav[role=top_level_main_menu] {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .top_utility {
+    text-align: center;
     .search-form {
       margin-bottom: 1rem;
+      margin-left: 0;
     }
     .utility_divider {
       display: none;
@@ -482,24 +509,50 @@ nav[role=top_level_main_menu] {
   .header {
     border-bottom: none;
     margin-bottom: 0;
+    .shop_logo img {
+      width: 75%;
+    }
   }
   .nav.full_menu {
     display: none;
   }
   #mobile_menu_container {
     display: block;
+    .mobile_menu_list {
+      ul {
+        float: left;
+        width: 100%;
+      }
+    }
   }
 
   #slideshow-container {
     width: 300px !important;
+  }
+  .footer {
+    text-align: center;
+    .columns {
+      margin-bottom: 1.5rem;
+    }
+  }
+  .copyright_powers {
+    span {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .pipe {
+      display: none;
+    }
   }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
   .top_utility {
+    text-align: center;
     .search-form {
       margin-bottom: 1rem;
+      margin-left: 0;
     }
     .utility_divider {
       display: none;
@@ -508,38 +561,40 @@ nav[role=top_level_main_menu] {
   .header {
     border-bottom: none;
     margin-bottom: 0;
+    .shop_logo img {
+      width: 75%;
+    }
   }
   .nav.full_menu {
     display: none;
   }
   #mobile_menu_container {
     display: block;
+    .mobile_menu_list {
+      ul {
+        float: left;
+        width: 100%;
+      }
+    }
   }
   #slideshow-container {
     width: 300px !important;
   }
-}
-
-
-.slideshow {
-  margin-bottom: 2rem;
-  position: relative;
-  .slide {
-    position: relative;
-    h2 {
-      background: rgba(0,0,0,.75);
-      bottom: 0;
-      color: #fafafa;
-      margin: 0;
-      padding: .5rem 0 .5rem 1rem;
-      position: absolute;
-      width: 100%;
+  .footer {
+    text-align: center;
+    .columns {
+      margin-bottom: 1.5rem;
     }
-    a {
-      height: 240px;
-      position: absolute;
-      width: 580px;
+  }
+  .copyright_powers {
+    span {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .pipe {
+      display: none;
     }
   }
 }
+
 

@@ -64,7 +64,7 @@
     <script>
       $(window).load(function() {
         $('.flexslider').flexslider({
-          animation: "fade",
+          animation: "slide",
           controlsContainer: ".flex-container"
         });
       });
@@ -251,8 +251,15 @@
 
     <div id="mobile_menu_container" class="sixteen columns mobile_menu">
       <div class="mobile_menu_list" style="display: none;">
-        <ul class="nav">
-          {% for link in linklists.mobile-menu.links %}
+        <ul class="nav mobile_top_nav">
+          {% for link in linklists.bottom-level-main-menu.links %}
+          <li class="mobile_link{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}{% if current_tags contains tag %} active{% endif %}">
+            {{ link.title | link_to: link.url }}
+          </li>
+          {% endfor %}
+        </ul>
+        <ul class="nav mobile_bottom_nav">
+          {% for link in linklists.main-menu.links %}
           <li class="mobile_link{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}{% if current_tags contains tag %} active{% endif %}">
             {{ link.title | link_to: link.url }}
           </li>
@@ -301,12 +308,12 @@
       <div class="four columns footer_social">
 
         <div class="footer_social_top">
-          <a href="" class="instagram"></a>
-          <a href="" class="facebook"></a>
+          <a href="http://instagram.com/sellwoodcycle" class="instagram" target="_blank"></a>
+          <a href="https://www.facebook.com/SellwoodCycleRepair" class="facebook" target="_blank"></a>
         </div>
         <div class="footer_social_bottom">
-          <a href="" class="tumblr"></a>
-          <a href="" class="twitter"></a>
+          <a href="http://sellwoodcycle.tumblr.com/" class="tumblr" target="_blank"></a>
+          <a href="https://twitter.com/sellwoodcycle" class="twitter" target="_blank"></a>
         </div>
 
       </div>
@@ -360,7 +367,11 @@
 
     </footer>
 
-    <p role="contentinfo" class="copyright">Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
+    <section class="copyright_powers">
+    <span class="copyright">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}<span class="pipe">&nbsp;|</span></span>
+      <span class="powered_by">This site runs on <a href="http://www.shopify.com/" alt="Shopify" target="_blank">Shopify</a>, <a href="http://stumptowncoffee.com/" alt="Stumptown" target="_blank">Coffee</a>, and <a href="http://www.pdxbottleshop.com/" alt="Portland Bottle Shop" target="_blank">Beer</a><span class="pipe">&nbsp;|</span></span>
+      <span class="built_by">Developed by <a href="http://velograph.net" alt="Velograph - Jason Britton" target="_blank">Velograph</a></span>
+    </section>
 
     {% comment %}Shopify does not support Internet Explorer 6.{% endcomment %}
     <!--[if lt IE 7]>

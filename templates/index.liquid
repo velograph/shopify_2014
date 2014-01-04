@@ -13,7 +13,7 @@
         {% capture alt %}image_{{ i }}_alt{% endcapture %}
         {% capture caption %}image_{{ i }}_caption{% endcapture %}
         {% if settings[display_slideshow] %}
-          <li class="slide"><a href="{{settings[link]}}"></a><img src="{{ slide | asset_url }}" data-url="{{ settings[link] }}" class="slide-img" alt="{{ settings[alt] }}" /><h2>{{ settings[caption] }}</h2></li>
+          <li class="slide"><a href="{{settings[link]}}"></a><img src="{{ slide | asset_url }}" data-url="{{ settings[link] }}" class="slide-img" alt="{{ settings[alt] }}" />{% if settings.caption %}<h2>{{ settings[caption] }}</h2>{% endif %}</li>
         {% endif %}             
         {% endfor %}
       </ul>
