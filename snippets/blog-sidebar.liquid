@@ -1,0 +1,50 @@
+<div class="four columns">
+  {% comment %} 
+
+  Edit the 2 values right below: what's your blog handle and how many articles do you want to show?
+
+  {% endcomment %}
+
+  {% assign your_blog_handle_here = 'blog' %}
+  {% assign how_many_articles_to_show = 5 %}
+
+  <!-- START OF LATEST BLOG POSTS -->
+  <div class="widget blog_subscribe">
+    {% if blog.handle == 'blog' %}
+    <a href="" alt="Subscribe link"><img src="{{ 'blog_subscribe.png' | asset_url }}" alt="Blog Subscribe" title="Blog Subscribe" /><small>Subscribe</small></a>
+    {% elsif blog.handle == 'calendar' %}
+    this is a test
+    {% endif %}
+        
+  </div><!-- .widget .blog_subscribe -->
+
+  <div class="widget" id="widget-latest-blog-posts">
+    <div class="widget-header">
+      <h3>Recent Posts</h3>
+    </div>
+
+    <div class="latest-blog-posts-wrapper">
+
+      <ul class="latest-blog-posts-list">
+        {% for article in blogs[your_blog_handle_here].articles limit: how_many_articles_to_show %}
+        <li>{{ article.title | link_to: article.url }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  {% if blog.all_tags != blank %}
+  <div class="widget" id="widget-blog-tags">
+    <h2>Categories</h2>
+    <ul>
+      {% for tag in blog.all_tags %}
+        <li>
+        <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handelize }}">{{ tag }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  </div>
+</div>
+
+<div class="clear"></div>

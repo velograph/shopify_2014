@@ -67,6 +67,7 @@
 
 body {
   background: #000;
+  background-attachment: fixed;
   background-image: url( {{ 'tent_background.jpg' | asset_url }} );
   background-position: center top;
   background-repeat: no-repeat;
@@ -111,6 +112,11 @@ h5 {
 
 h6 {
   font-family: 'oswaldRegular';
+}
+
+small {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .hidden {
@@ -195,6 +201,9 @@ h6 {
   .shop_logo {
     padding: .5rem 0;
     text-align: center;
+    img {
+      width: 75%;
+    }
   }
 }
 
@@ -324,6 +333,9 @@ nav[role=top_level_main_menu] {
 .slideshow {
   margin-bottom: 2rem;
   position: relative;
+    li {
+    margin-bottom: 0;
+  }
   .slide {
     position: relative;
     h2 {
@@ -402,6 +414,53 @@ nav[role=top_level_main_menu] {
 .prod-price {
   display: block;
   font-style: italic;
+}
+
+/* Blog */
+.blog_page_title {
+  h2 {
+    color: #f70;
+  }
+}
+
+.blog {
+  .blog_article {
+    background: rgba(77,77,77,.55);
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  .pagination {
+    margin-bottom: 2rem;
+    .prev {
+      margin-right: 1rem;
+    }
+    .next {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.widget {
+  margin-bottom: 2rem;
+  li {
+    border-bottom: 1px dotted #fff;
+    padding-bottom: .125rem;
+  }
+}
+
+.blog_subscribe {
+  border-bottom: 1px solid #fff;
+  padding-bottom: .125rem;
+  img {
+    margin-right: .5rem;
+    max-width: 12px;
+  }
+  a, a:visited {
+    color: #fff;
+  }
 }
 
   
@@ -525,9 +584,13 @@ nav[role=top_level_main_menu] {
       }
     }
   }
-
-  #slideshow-container {
-    width: 300px !important;
+  .blog_page_title {
+    h2 {
+      text-align: center;
+    }
+  }
+  .pagination {
+    text-align: center;
   }
   .footer {
     text-align: center;
@@ -577,8 +640,13 @@ nav[role=top_level_main_menu] {
       }
     }
   }
-  #slideshow-container {
-    width: 300px !important;
+  .blog_page_title {
+    h2 {
+      text-align: center;
+    }
+  }
+  .pagination {
+    text-align: center;
   }
   .footer {
     text-align: center;
