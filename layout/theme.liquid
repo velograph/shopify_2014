@@ -53,14 +53,8 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   {{ 'site_scripts.js' | asset_url | script_tag }}
 
-  {% comment %}
-  Scripts and CSS for the homepage slider
-  {{ 'flexslider.css' | asset_url | stylesheet_tag }}
-  {{ 'jquery.flexslider.js' | asset_url | script_tag }}
-  {{ 'jquery.flexslider-min.js' | asset_url | script_tag }}
-  {% endcomment %}
+  {% if settings.display_slideshow %}{{ 'jquery.slider.js' | asset_url | script_tag }}
 
-  {% if settings.display_slideshow %}
     <script>
       $(window).load(function() {
         $('.flexslider').flexslider({
@@ -69,12 +63,8 @@
         });
       });
     </script>
+
   {% endif %}
-  <script>
-    $(function() {
-      $( "#mobile_menu" ).accordion();
-    });
-  </script>
 
 </head>
 
