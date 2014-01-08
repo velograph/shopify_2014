@@ -127,6 +127,18 @@ small {
   clear: both;
 }
 
+dl {
+  lh {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  dt {
+    line-height: 20px;
+    margin-bottom: 1rem;
+    padding-left: .5rem;
+  }
+}
+
   
 /* 3. Header
 ================================================== */
@@ -135,7 +147,7 @@ small {
 .top_utility {
   margin-bottom: 1rem;
   text-align: right;
-  .search-form, .checkout-cart, .utility_divider {
+  .search-form, .utility_divider {
     display: inline-block;
     margin-left: 1rem;
   }
@@ -179,12 +191,13 @@ small {
     font: 1.5rem 'openSansBold';
   }
   .checkout-cart {
+    display: inline-block;
     font-size: .75rem;
-    margin-bottom: 0;
+    margin: 0 0 0 .5rem;
     text-align: right;
     li {
       float: left;
-      margin: 0 .5rem 0 0;
+      margin: 0 0 0 .5rem ;
       a {
         color: #fff;
       }
@@ -664,5 +677,66 @@ nav[role=top_level_main_menu] {
     }
   }
 }
+
+.ui-widget-overlay {
+  background: rgba(34,34,34,.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.ui-dialog {
+  background: #000;
+  border: 1px solid #08c;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #08c;
+  color: #fff;
+  padding: 0 1rem;
+  .ui-dialog-titlebar {
+    border-bottom: 1px solid #f40;
+    padding: 1rem 0;
+    text-align: right;
+    .ui-dialog-title {
+      float: left;
+    }
+    button {
+      border: none;
+      background: transparent;
+      background-image: url({{ 'dialog_close.png' | asset_url }});
+      color: #fff;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: normal;
+      height: 16px;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      text-indent: -99999px;
+      text-shadow: none;
+      width: 15px;
+    }
+    button:hover {
+      background-position: 0 -18px;
+    }
+  }
+  .ui-dialog-content {
+    padding: 1rem 0;
+    .last {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 

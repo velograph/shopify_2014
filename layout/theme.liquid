@@ -49,8 +49,8 @@
 
   {% comment %}
   Script and CSS for toggler menu
-  {% endcomment %}
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  {% endcomment %}
   {{ 'site_scripts.js' | asset_url | script_tag }}
 
   {% if settings.display_slideshow %}{{ 'jquery.slider.js' | asset_url | script_tag }}
