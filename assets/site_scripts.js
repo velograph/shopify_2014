@@ -6,11 +6,10 @@ $(function() {
 });
 
 $(function() {
-  $( "#dialog" ).dialog({
+  $( "#contact_dialog" ).dialog({
     autoOpen: false,
     modal: true,
-    title: "Purchasing Methods",
-    width: 500,
+    title: "Contact Us",
     show: {
       effect: "fade",
       duration: 500
@@ -22,7 +21,13 @@ $(function() {
   });
 
   $( "#opener" ).click(function() {
-    $( "#dialog" ).dialog( "open" );
+    $( "#contact_dialog" ).dialog( "open" );
   });
 });
 
+$(function() {
+  $( "#accordion" ).accordion({
+    active: false,
+    collapsible: true,
+  });
+ });

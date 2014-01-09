@@ -81,6 +81,37 @@
 
   </form>
   
+      <div class="image featured">
+        {% if settings.enable_product_image_zoom %}
+        <a href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position: 'inside', showTitle: 'false'" id="placeholder">
+          <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+        </a>
+        {% else %}
+        <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="placeholder">
+          <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+        </a>
+        {% endif %}
+        <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="zoom-image" {% unless settings.display_product_image_enlarge %}style="display:none;"{% endunless %}>Enlarge Image</a>
+        {% if product.price_min < product.compare_at_price_min %}<span class="banner sale">Sale</span>{% endif %}
+      </div> <!-- /.image -->
+      {% if product.images.size > 1 %}
+      <div class="thumbs clearfix">
+        {% for image in product.images %}
+        {% if settings.enable_product_image_zoom %}
+        <div class="image">
+          <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'original' }}', tint: '#ffffff'">
+            <img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+          </a>
+        </div>
+        {% else %}
+        <div class="image">
+          <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
+            <img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+          </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div><!-- /.thumbs -->
   <div id="product-photos">
   
   {% if product.images.size == 0 %}

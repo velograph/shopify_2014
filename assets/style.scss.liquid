@@ -128,11 +128,11 @@ small {
 }
 
 dl {
-  lh {
+  dt {
     display: inline-block;
     margin-bottom: .5rem;
   }
-  dt {
+  dd {
     line-height: 20px;
     margin-bottom: 1rem;
     padding-left: .5rem;
@@ -429,6 +429,69 @@ nav[role=top_level_main_menu] {
   font-style: italic;
 }
 
+/* Product - Single */
+.product_breadcrumb {
+  margin-bottom: 1rem;
+}
+
+.product_images {
+  img {
+    border: 2px solid #fff;
+  }
+}
+
+.product_section {
+  background: #f40;
+}
+
+.product_info {
+  h1 {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  }
+  h4 {
+    color: #f70;
+  }
+  .product_add {
+    margin-bottom: 2rem;
+    .opener, #accordion {
+      display: inline;
+    }
+    .opener {
+      background: #08c;
+      border-radius: 2px;
+      padding: .25rem;
+      cursor: pointer;
+      transition: background .2s linear;
+    }
+    .opener:hover {
+      background: #069;
+    }
+    .info_icon {
+      cursor: pointer;
+      margin-left: .5rem;
+      vertical-align: sub;
+      width: 15px;
+    }
+    .ui-accordion-content {
+      position: relative;
+      top: 2rem;
+    }
+  }
+  .product_collection_type {
+    border-bottom: 1px dotted #fff;
+    border-top: 1px dotted #fff;
+  }
+  .prev_next {
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+  }
+}
+
 /* Blog */
 .blog_page_title {
   h2 {
@@ -723,8 +786,11 @@ nav[role=top_level_main_menu] {
   }
   .ui-dialog-content {
     padding: 1rem 0;
-    .last {
-      margin-bottom: 0;
+    .dialog_half {
+      float: left;
+      margin-bottom: 1rem;
+      text-align: center;
+      width: 50%;
     }
   }
 }
