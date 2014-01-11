@@ -51,6 +51,10 @@
   Scripts for toggler menu and dialog
   {% endcomment %}
   {{ 'site_scripts.js' | asset_url | script_tag }}
+  {{ 'jquery.zoom.js' | asset_url | script_tag }}
+  {{ 'fancy.js' | asset_url | script_tag }}
+  {{ 'shop.js' | asset_url | script_tag }}
+
 
   {% if settings.display_slideshow %}{{ 'jquery.slider.js' | asset_url | script_tag }}
 
@@ -368,10 +372,6 @@
     <![endif]-->
     
   </div><!-- end of #container -->
-  {% comment %} 
-  I think this is uneccesary
-  {{ 'shop.js'  | asset_url | script_tag }}
-  {% endcomment %} 
 
 </body>
 </html>

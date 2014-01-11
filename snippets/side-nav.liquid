@@ -1,7 +1,8 @@
+Side Nav Placeholder
 {% if collection.handle == 'new-bikes' %}
 
   <h3>New Bike Categories</h3>
-  <h6>Browse a bike for size availability</h6>
+  <h6>New Bikes are listed by Model. Click on a bike to see if we have one in stock</h6>
   <ul>
     {% for link in linklists.new-bikes.links %}
          <li>{{ link.title | link_to: link.url }}</li>
@@ -12,18 +13,18 @@
 
   <h3>Browse by Type</h3>
   <ul>
-    {% for link in linklists.used-bikes.links %}
-         <li>{{ link.title | link_to: link.url }}</li>
-       {% endfor %}
-     </ul>
+    <li><a href="/collections/used-cyclocross-bikes">Cyclocross</a></li>
+    <li><a href="/collections/used-mountain-bikes">Mountain</a></li>
+  </ul>
 
 {% elsif collection.handle == 'used-cyclocross-bikes' %}
 
   <h3>Sizes</h3>
-  <a href="/collections/used-bikes">&larr; Back</a>
+  {{ linklist.title }}
   <ul>
+      <li><a href="/collections/used-bikes">&larr; Used Bikes</a></li>
     {% for link in linklists.used-cyclocross-bikes.links %}
-         <li>{{ link.title | link_to: link.url }}</li>
+      <li>{{ link.title | link_to: link.url }}</li>
        {% endfor %}
      </ul>
 
@@ -32,6 +33,7 @@
   <h3>Sizes</h3>
   {{ linklist.title }}
   <ul>
+      <li><a href="/collections/used-bikes">&larr; Used Bikes</a></li>
     {% for link in linklists.used-mountain-bikes.links %}
       <li>{{ link.title | link_to: link.url }}</li>
        {% endfor %}

@@ -3,39 +3,43 @@
 </div>
 
 <div class="ten columns product_images">
-
-  <div id="product-photos">
   
-  {% if product.images.size == 0 %}
-  
-    <div id="product-photo-container">
-      <img src="{{ '' | product_img_url: 'grande' }}" alt="" />
-    </div><!-- #product-photo-container -->
-    
-  {% else %}
-    
-    <div id="product-photo-container">
-      {% for image in product.images %}
-      <a class="gallery" href="{{ image.src | product_img_url: 'original' }}" rel="gallery">
-        <img src="{{ image.src | product_img_url: 'grande' }}" alt="{{ image.alt | escape }}" />
+  <div class="product_photos">
+    <div class="featured">
+      {% if settings.enable_product_image_zoom %}
+      <a href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position: 'inside', showTitle: 'false'" id="placeholder">
+        <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
       </a>
-      {% endfor %}
-    </div><!-- #product-photo-container -->
-
+      {% else %}
+      <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="placeholder">
+        <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+      </a>
+      {% endif %}
+      <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="zoom-image" {% unless settings.display_product_image_enlarge %}style="display:none;"{% endunless %}>Enlarge Image</a>
+      {% if product.price_min < product.compare_at_price_min %}<span class="banner sale">Sale</span>{% endif %}
+    </div> <!-- /.image -->
     {% if product.images.size > 1 %}
-    <ul id="product-photo-thumbs" class="clearfix">
-      {% for image in product.images %}
-      <li class="product-photo-thumb">
-        <img src="{{ image.src | product_img_url: 'compact' }}" alt="{{ image.alt | escape }}" />
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-    
-  {% endif %}
 
-  </div><!-- #product-photos -->
-  
+    <div class="thumbs">
+      {% for image in product.images %}
+      {% if settings.enable_product_image_zoom %}
+      <div class="image">
+        <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'original' }}', tint: '#ffffff'">
+          <img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+        </a>
+      </div>
+      {% else %}
+      <div class="image">
+        <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
+          <img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+        </a>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div><!-- .thumbs -->
+    {% endif %}
+  </div> <!-- .product_photos -->
+
 </div><!-- .ten .columns .product_images -->
 
 <div class="six columns product_info">
@@ -124,9 +128,8 @@
 
       <div class="collections_list">
 
-        <span class="list_title">Collections:</span>
-
         <ul>
+          <li><span class="list_title">Tags:</span></li>
         {% for tag in product.tags %}
           <li>{{ tag | link_to_tag: tag }}</li>
         {% endfor %}
@@ -135,14 +138,15 @@
       </div><!-- .collections_list -->
 
       <div class="product_type">
-        
-        <span class="list_title">Type:</span>
 
         <ul>
+          <li><span class="list_title">Collections:</span></li>
           <li>{{ product.type | link_to_type }}</li>
         </ul>
 
       </div><!-- .product_type -->
+
+      <div class="clear"></div>
 
     </div><!-- .product_collection_type -->
 
@@ -178,5 +182,27 @@
 
 <div class="clear"></div>
 
-{% include 'snippet-related-products' %}
+<div class="six columns dotted_divider">
+  &nbsp;
+</div>
+
+<div class="four columns divider_title">
+
+  <h2>Related Items</h2>
+
+</div>
+
+<div class="six columns dotted_divider">
+  &nbsp;
+</div>
+
+<div class="clear"></div>
+
+{% comment %}
+{% include 'github-related-products' %}
+{% endcomment %}
+
+{% include 'related-products' %}
+
+<div class="clear"></div>
 

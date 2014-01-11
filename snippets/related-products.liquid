@@ -1,40 +1,43 @@
-{% if settings.show_related_products %}
-
-{% assign number_of_related_products_to_show = 4 %}
-
-{% capture number_of_related_products_to_fetch %}{{ number_of_related_products_to_show | plus: 1 }}{% endcapture %}
-
-{% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+<!-- Solution brought to you by Caroline Schnapp -->
+<!-- See this: http://wiki.shopify.com/Related_Products -->
+ 
+{% assign number_of_related_products_to_show = 3 %}
+{% assign image_size = 'original' %}
+ 
+{% assign number_of_related_products_to_fetch = number_of_related_products_to_show | plus: 1 %}
+ 
+{% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' or collection.handle == 'new-bikes' or collection.handle == 'used-bikes' %}
 {% assign found_a_collection = false %}
 {% for c in product.collections %}
-{% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' %}
-{% assign found_a_collection = true %}
-{% assign collection = c %}
-{% endif %}
+  {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' and c.handle != 'new-bikes' and c.handle != 'used-bikes' and c.all_products_count > 1 %}
+    {% assign found_a_collection = true %}
+    {% assign collection = c %}
+  {% endif %}
 {% endfor %}
 {% endif %}
-
+ 
 {% if collection and collection.products_count > 1 %}
-
-{% assign current_product = product %}
-
-<div class="related-products-container">
-  <h2 class="related-products-title smooth">{{ settings.related_prod_title }}</h2>
-  <ul class="related-products-list clearfix">
-
-    {% assign current_product_found = false %}
-    {% for product in collection.products limit: number_of_related_products_to_fetch %}
+  <div class="related_products_container">
+  {% assign current_product = product %}
+  {% assign current_product_found = false %}
+  {% for product in collection.products limit: number_of_related_products_to_fetch %}
     {% if product.handle == current_product.handle %}
-    {% assign current_product_found = true %}
+       {% assign current_product_found = true %}
     {% else %}
-    {% unless current_product_found == false and forloop.last %}
-        {% include 'snippet-product-item' with 'four' %}
-    {% endunless %}
+       {% unless current_product_found == false and forloop.last %}
+        <div class="one-third column">
+          <div class="image">
+            <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }}">
+            {{ product.featured_image | product_img_url: image_size | img_tag }}
+            </a>
+          </div>
+          <h4><a href="{{ product.url }}" title="{{ product.title | escape }}">{{ product.title }}</a></h4>
+          <h5 class="money">{{ product.price | money }}</h5>
+        </div>
+       {% endunless %}
     {% endif %}
-    {% endfor %}
-
-  </ul>
-</div><!-- #additional-products-container -->
-
+  {% endfor %}
+  </div>
+  <div class="clear"></div>
 {% endif %}
-{% endif %}
+
