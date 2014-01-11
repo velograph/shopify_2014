@@ -652,3 +652,74 @@
 
 </fieldset>
 
+<fieldset>
+  <legend>Product Page</legend>
+  <table>
+    <tr>
+      <th><label for="enable_product_image_zoom">Enable image zoom feature?</label></th>
+      <td><input type="checkbox" id="enable_product_image_zoom" name="enable_product_image_zoom" value="0" /></td>
+    </tr>
+    <tr>
+      <th><label for="image_zoom_opacity">Image enlargement background opacity?</label></th>
+      <td>
+        <select name="image_zoom_opacity" id="image_zoom_opacity">
+          <option value="1.0">100%</option>
+          <option value="0.9">90%</option>
+          <option value="0.8">80%</option>
+          <option value="0.7">70%</option>
+          <option value="0.6">60%</option>
+          <option value="0.5">50%</option>
+          <option value="0.4" selected="selected">40%</option>
+          <option value="0.3">30%</option>
+          <option value="0.2">20%</option>
+          <option value="0.1">10%</option>
+          <option value="0.0">0%</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_zoom_bg_color">Image enlargement background color</label></th>
+      <td>
+        <input id="image_zoom_bg_color" name="image_zoom_bg_color" class="color" value="#ffffff" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_product_image_enlarge">Display image enlarge icon?</label></th>
+      <td><input type="checkbox" id="display_product_image_enlarge" name="display_product_image_enlarge" value="0" /></td>
+    </tr>
+    <tr>
+      <th><label for="product_layout_style">Layout Style</label></th>
+      <td>
+        <input type="radio" name="product_layout_style" value="vertical" /> Vertical Images
+        <input type="radio" name="product_layout_style" value="horizontal" /> Horizontal Images
+      </td>
+    </tr>
+    <tr>
+      <th><label for="price_weight">Price: Font Weight</label></th>
+      <td>
+        <select name="price_weight" id="price_weight">
+          <option value="700" selected="selected">Bold</option>
+          <option value="400">Regular</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_quantity_dropdown">Display Quantity Dropdown?</label></th>
+      <td>
+        <input type="checkbox" id="display_quantity_dropdown" name="display_quantity_dropdown" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_product_collection_nav">Display next / previous product links?</label></th>
+      <td>
+        <input type="checkbox" id="display_product_collection_nav" name="display_product_collection_nav" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="show_related_products">Display related products?</label></th>
+      <td>
+        <input type="checkbox" id="show_related_products" name="show_related_products" value="1" />
+      </td>
+    </tr>
+  </table>
+</fieldset>
