@@ -3,11 +3,11 @@ Side Nav Placeholder
 
   <h3>New Bike Categories</h3>
   <h6>New Bikes are listed by Model. Click on a bike to see if we have one in stock</h6>
+
   <ul>
-    {% for link in linklists.new-bikes.links %}
-         <li>{{ link.title | link_to: link.url }}</li>
-       {% endfor %}
-     </ul>
+    <li><a href="/collections/new-cyclocross-bikes">Cyclocross</a></li>
+    <li><a href="/collections/new-mountain-bikes">Mountain</a></li>
+  </ul>
 
 {% elsif collection.handle == 'used-bikes' %}
 

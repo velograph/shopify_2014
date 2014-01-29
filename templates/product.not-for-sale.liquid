@@ -103,9 +103,9 @@
         <div class="accordion_guts">
 
           <dl>
-          {% if product.type == 'Used Bikes' or product.type == 'New Bikes' or product.type == 'Used Frames' or product.type == 'New Frames' %}
+          {% if product.type == 'Mountain Bikes' or product.type == 'Cyclocross Bikes' or product.type == 'Used Frames' or product.type == 'New Frames' %}
 
-            <dt><strong>Why is this {% if product.type == 'Used Bikes' or product.type == 'New Bikes' %}bike{% elsif product.type == 'Used Frames' or product.type == 'New Frames' %}frame {% endif %} not available for purchase online?</strong></dt>
+            <dt><strong>Why is this {% if product.type == 'Mountain Bikes' or product.type == 'Cyclocross Bikes' %}bike{% elsif product.type == 'Mountain Frames' or product.type == 'Cyclocross Frames' %}frame {% endif %} not available for purchase online?</strong></dt>
             <dd>We like to form a relationship with our customers, and as such, we want to make sure that the item you're buying is a perfect fit. </dd>
 
           {% elsif product.type == 'Components' or product.type == 'Accessories' or product.type == 'Apparel' %}
@@ -181,26 +181,6 @@
 </div><!-- .six .columns .product_info -->
 
 <div class="clear"></div>
-
-<div class="six columns dotted_divider">
-  &nbsp;
-</div>
-
-<div class="four columns divider_title">
-
-  <h2>Related Items</h2>
-
-</div>
-
-<div class="six columns dotted_divider">
-  &nbsp;
-</div>
-
-<div class="clear"></div>
-
-{% comment %}
-{% include 'github-related-products' %}
-{% endcomment %}
 
 {% include 'related-products' %}
 
