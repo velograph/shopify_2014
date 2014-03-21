@@ -1,0 +1,47 @@
+<div class="sixteen columns blog_page_title">
+  {% if current_tags %}
+    <h2>{{ blog.title | link_to: blog.url }} &raquo; {{ current_tags.first }}</h2>
+  {% else %}
+    <h2>{{ blog.title }}</h2>
+  {% endif %}
+  <p>At Sellwood, it's very important that all employees have a vast knowledge of Blazing Saddles and Slapshot quotes. Oh, and a love of bicycles. </p>
+</div>
+
+<div class="blog">
+
+{% for article in blog.articles %}
+<article class="one-third column staff_member {% if forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}">
+
+  <div class="entry_content">
+
+    <h1 class="blog_article_title">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h1>
+        <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handelize }}">{{ tag }}</a>
+    <div class="rte">
+      {% if article.excerpt.size > 0 %}
+        <a href="{{ article.url }}">{{ article.excerpt }}</a>
+      {% else %}
+        <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
+      {% endif %}
+    </div>
+
+  </div>
+
+</article>
+{% endfor %}
+
+{% if paginate.pages > 1 %}
+<div class="pagination">
+  {% comment %}
+  When paginating blog articles, a previous article is actually a newer article, not an older one,
+  because blog articles are shown and paginated in a reversed chronological order.
+  The word 'previous' can be confusing, hence we'll change it.
+  {% endcomment %}
+  {{ paginate | default_pagination | replace: 'Previous', 'Newer articles' | replace: 'Next', 'Older articles' }}
+</div><!-- .pagination -->
+{% endif %}
+
+</div><!-- .blog -->
+
+<div class="clear"></div>

@@ -11,7 +11,7 @@
   <!-- START OF LATEST BLOG POSTS -->
   <div class="widget blog_subscribe">
     {% if blog.handle == 'blog' %}
-    <a href="" alt="Subscribe link"><img src="{{ 'blog_subscribe.png' | asset_url }}" alt="Blog Subscribe" title="Blog Subscribe" /><small>Subscribe</small></a>
+      <a href="{{ blog.handle }}.atom" alt="Subscribe link"><img src="{{ 'blog_subscribe.png' | asset_url }}" alt="Blog Subscribe" title="Blog Subscribe" /><small>Subscribe</small></a>
     {% elsif blog.handle == 'calendar' %}
     this is a test
     {% endif %}
