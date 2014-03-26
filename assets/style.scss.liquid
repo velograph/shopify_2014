@@ -340,7 +340,11 @@ nav[role=top_level_main_menu] {
 }
 
 .breadcrumbs {
+  border-bottom: 1px solid #fff;
   font-family: 'oswaldRegular';
+  margin-bottom: 2rem;
+  padding-bottom: .25rem;
+  padding-top: 1rem;
 }
 
 .slideshow {
@@ -401,6 +405,18 @@ nav[role=top_level_main_menu] {
   }
 }
 
+/* Collection and Product shared styling */
+.collection,
+.product,
+.related_products_container {
+  background: rgba(77,77,77,.55);
+}
+
+.prod-price {
+  display: block;
+  font-style: italic;
+}
+
 /* Portals - Homepage/Parent Collection Page */
 .collection_portal {
   margin-bottom: 2rem;
@@ -426,15 +442,19 @@ nav[role=top_level_main_menu] {
   }
 }
 
-/* Sub-Collection Listings */
-.prod-price {
-  display: block;
-  font-style: italic;
+/* Product - Single */
+.product {
+  margin-bottom: 1rem;
 }
 
-/* Product - Single */
-.product_breadcrumb {
-  margin-bottom: 1rem;
+.related_products_container {
+  padding: 1rem 0;
+  .product_image {
+    margin-bottom: .25rem;
+  }
+  .prod-price {
+    margin-top: .25rem;
+  }
 }
 
 .product_images {
@@ -520,13 +540,15 @@ nav[role=top_level_main_menu] {
   }
 }
 
-/* Blog */
+/* Blog and Generic page styling */
+.template-page,
 .blog_page_title {
   h2 {
     color: #f70;
   }
 }
 
+/* Blog */
 .blog {
   .blog_article {
     background: rgba(77,77,77,.55);
@@ -567,7 +589,65 @@ nav[role=top_level_main_menu] {
   }
 }
 
+/* Staff */
+#staff {
+  #main {
+    .staff_member {
+      margin-bottom: 20px;
+      .entry_content {
+        background: rgba(77, 77, 77, 0.55);
+        padding: 0 10px 10px;
+      }
+      h1 {
+        font-size: 24px;
+        /* Keeps the names to one line so it doesn't break the layout */
+      }
+    }
+  }
+}
   
+/* Rentals */
+#rentals {
+  .rental_bike {
+    background: rgba(77, 77, 77, 0.55);
+    display: inline-block;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* Repair */
+#repair {
+  .entry_content {
+    background: rgba(77, 77, 77, 0.55);
+  }
+}
+
+
+/* Table */
+.size_matrix_table {
+  margin-bottom: 20px;
+  width: 100%;
+  th {
+    background: #08c;
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  td {
+    border: 1px solid #fff;
+    border-top: 0;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+
+
 /* 5. Footer 
 ================================================== */
 
@@ -692,6 +772,45 @@ nav[role=top_level_main_menu] {
   .blog_page_title {
     h2 {
       text-align: center;
+    }
+  }
+  .collection {
+    background: transparent;
+    .breadcrumbs {
+      margin-bottom: 1rem;
+    }
+    .product {
+      margin-bottom: 2rem;
+    }
+  }
+  .product {
+    background: transparent;
+    border-bottom: 1px dotted #fff;
+    .breadcrumbs {
+      margin-bottom: 1rem;
+    }
+    .featured {
+      margin: 0 auto 1rem;
+      img {
+        max-width: 350px;
+      }
+    }
+    .thumbs {
+      margin: 0 1.75rem;
+      img {
+        width: 75px;
+      }
+    }
+  }
+  .template-product {
+    .dotted_divider {
+      display: none;
+    }
+  }
+  .related_products_container {
+    background: transparent;
+    .related_product {
+      margin-bottom: 2rem;
     }
   }
   .pagination {

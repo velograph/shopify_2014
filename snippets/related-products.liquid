@@ -15,21 +15,25 @@
  
 {% if collection and collection.products_count > 1 %}
 
-<div class="six columns dotted_divider">
-  &nbsp;
-</div>
+<section class="product_divider">
 
-<div class="four columns divider_title">
+  <div class="six columns dotted_divider">
+    &nbsp;
+  </div>
 
-  <h2>Related Items</h2>
+  <div class="four columns divider_title">
 
-</div>
+    <h2>Related Items</h2>
 
-<div class="six columns dotted_divider">
-  &nbsp;
-</div>
+  </div>
 
-<div class="clear"></div>
+  <div class="six columns dotted_divider">
+    &nbsp;
+  </div>
+
+  <div class="clear"></div>
+
+</section>
 
   <div class="related_products_container">
   {% assign current_product = product %}
@@ -39,19 +43,21 @@
        {% assign current_product_found = true %}
     {% else %}
        {% unless current_product_found == false and forloop.last %}
-        <div class="one-third column">
-          <div class="image">
+        <div class="one-third column related_product">
+          <div class="product_image">
             <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }}">
             {{ product.featured_image | product_img_url: image_size | img_tag }}
             </a>
           </div>
-          <h4><a href="{{ product.url }}" title="{{ product.title | escape }}">{{ product.title }}</a></h4>
-          <h5 class="money">{{ product.price | money }}</h5>
+          <div class="prod-caption">
+            <a href="{{ product.url }}" title="{{ product.title | escape }}">{{ product.title }}</a>
+            <span class="prod-price">{{ product.price | money }}</span>
+          </div>
         </div>
        {% endunless %}
     {% endif %}
   {% endfor %}
-  </div>
   <div class="clear"></div>
+  </div>
 {% endif %}
 
