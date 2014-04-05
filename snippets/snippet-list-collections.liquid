@@ -1,4 +1,4 @@
-<div id="collections-listing">
+<div id="collections-listing" class="collection">
 
   {% if linklists.featured-collections-bikes-frames.links.size > 0 %}
     <ul>
@@ -9,7 +9,7 @@
       <li class="{{ collection.handle }}-collection eight columns">      
 
       {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-        <div class="collection collection_portal">
+        <div class="collection_portal">
 
           <h2 class="portal_title">
             <a href="{{ collection.url }}" title="browse {{ collection_title }}">{{ collection.title }}</a>
@@ -34,7 +34,9 @@
     </ul>{% else %}
     {% endif %}
 
-  {% if linklists.featured-collections-other.links.size > 0 %}
+    <div class="clear"></div>
+
+    {% if linklists.featured-collections-other.links.size > 0 %}
     <ul>
       {% for link in linklists.featured-collections-other.links %}
       {% assign collection = link.object %}
@@ -43,7 +45,7 @@
       <li class="{{ collection.handle }}-collection one-third column">      
 
       {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-        <div class="collection collection_portal">
+        <div class="collection_portal">
 
           <h2 class="portal_title">
             <a href="{{ collection.url }}" title="browse {{ collection_title }}">{{ collection.title }}</a>
@@ -68,7 +70,7 @@
     </ul>{% else %}
     {% endif %}
 
-</div><!-- end of #collection-listing -->
+  <div class="clear"></div>
 
-<div class="clear"></div>
+</div><!-- end of #collection-listing -->
 

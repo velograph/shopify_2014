@@ -6,69 +6,12 @@
     {% include 'side-nav' %}
 
   {% comment %}
-    <ul class="clearfix">
-    <li class="clearfix filter">
-      {% assign tags = 'All, New, Used' | replace: ' ,', ',' | replace: ', ', ',' | split: ',' %}
-        <p>New or Used?</p>
-        <select class="coll-filter">
-            <option value="">All</option>
-          {% for tag in tags %}
-          {% if current_tags contains tag %}
-            <option value="{{ tag | handle }}" selected>{{ tag }}</option>
-            {% elsif collection.all_tags contains tag %}
-            <option value="{{ tag | handle }}">{{ tag }}</option>
-          {% endif %}
-        {% endfor %}
-        </select>
-    </li>
-    <li class="clearfix filter">
-      {% assign tags = 'Cyclocross, Mountain' | replace: ' ,', ',' | replace: ', ', ',' | split: ',' %}
-        <p>Bike Type</p>
-        <select class="coll-filter">
-            <option value="">All</option>
-          {% for tag in tags %}
-          {% if current_tags contains tag %}
-            <option value="{{ tag | handle }}" selected>{{ tag }}</option>
-            {% elsif collection.all_tags contains tag %}
-            <option value="{{ tag | handle }}">{{ tag }}</option>
-          {% endif %}
-        {% endfor %}
-        </select>
-    </li>
-    <li class="clearfix filter">
-    {% assign tags = 'Below $500, $500-$999, $1000-up' | replace: ' ,', ',' | replace: ', ', ',' | split: ',' %}
-    <p>Shop by price</p>
-    <select class="coll-filter">
-    <option value="">All</option>
-    {% for tag in tags %}
-    {% if current_tags contains tag %}
-    <option value="{{ tag | handle }}" selected>{{ tag }}</option>
-    {% elsif collection.all_tags contains tag %}
-    <option value="{{ tag | handle }}">{{ tag }}</option>
-    {% endif %}
-    {% endfor %}
-    </select>
-    </li>
-    </ul>
-
   Important notes about pagination:
   - Never access collection.products before the opening paginate tag.
   - Never paginate by more than 50.
   {% endcomment %}
 
   {% paginate collection.products by 6 %}
-
-  {% comment %}
-  Re-use the 'rte' class wherever you output content that was added by a merchant using
-  the Rich Text Editor ( 'rte' stands for rich text editor ).
-  Style all HTML elements in that content the same way across the board.
-  Use the 'rte' class in your CSS to help maintain that consistency.
-  Example: the h2 element should have the same size and color in:
-  - product descriptions
-  - collection descriptions
-  - 'page' pages' content
-  - blog post
-  {% endcomment %}
 
   {% comment %}
   Listing all tags within the current collection.
@@ -87,22 +30,96 @@
 
   <div class="twelve columns">
 
+    <ul class="product_list">
+    {% for product in collection.products %}
+      {% include 'product-grid-item' with 'six columns omega' %}
+    {% else %}
 
-  <ul class="product_list">
-  {% for product in collection.products %}
-    {% include 'product-grid-item' with 'six columns omega product' %}
-  {% else %}
-  <p>There are no products in this view.</p>
-  {% endfor %}
-  </ul>
+        {% if collection.handle == 'used-cargo-bikes' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Cargo Bikes below?</h4>
+          {% assign collectionName = 'new-cargo-bikes' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
 
-  {% if paginate.pages > 1 %}
-  <div id="pagination">
-    {{ paginate | default_pagination }}
-  </div>
-  {% endif %}
+        {% if collection.handle == 'used-cyclocross-bikes' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Cyclocross Bikes below?</h4>
+          {% assign collectionName = 'new-cyclocross-bikes' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+        {% if collection.handle == 'used-kids-bikes' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that wheel size. Why not check out some of our New Kids Bikes below?</h4>
+          {% assign collectionName = 'new-kids-bikes' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+        {% if collection.handle == 'used-mountain-bikes' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Mountain Bikes below?</h4>
+          {% assign collectionName = 'new-mountain-bikes' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+        {% if collection.handle == 'used-road-bikes' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Road Bikes below?</h4>
+          {% assign collectionName = 'new-road-bikes' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+        {% if collection.handle == 'used-upright-bikes' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Upright Bikes below?</h4>
+          {% assign collectionName = 'new-upright-bikes' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+        {% if collection.handle == 'used-cyclocross-frames' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Cyclocross Frames below?</h4>
+          {% assign collectionName = 'new-cyclocross-frames' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+        {% if collection.handle == 'used-mountain-frames' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Mountain Frames below?</h4>
+          {% assign collectionName = 'new-mountain-frames' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+        {% if collection.handle == 'used-road-frames' %}
+          <h4>It looks like we're all out of {{ collection.title }} in that size range. Why not check out some of our New Road Frames below?</h4>
+          {% assign collectionName = 'new-road-frames' %}
+          {% for product in collections[collectionName].products %}
+            {% include 'product-grid-item' with 'six columns omega' %}
+           {% endfor %}
+        {% endif %}
+
+    {% endfor %}
+    </ul>
+
+    <div class="clear"></div>
+
+    {% if paginate.pages > 1 %}
+    <div id="pagination">
+      {{ paginate | default_pagination }}
+    </div>
+    {% endif %}
 
   {% endpaginate %}
+
   </div>
 
   <div class="clear"></div>

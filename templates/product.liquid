@@ -73,6 +73,15 @@
         {{ product.description }}
 
     </div><!-- .product_description -->
+
+    {% if collection.handle == 'new-bikes' %}
+
+      <div class="product_section">
+        <h4>Available Sizes:</h4>
+        <em>Current available sizes in the shop. If you don't see your size, we probably have one on the way!</em>
+      </div>
+
+    {% endif %}
       
     {% if product.variants.size > 1 %}
     <div class="product_variants{% if hide_default_title %}{% unless settings.show_qty and product.available %} hidden{% endunless %}{% endif %} product_section">
@@ -82,7 +91,9 @@
         <select class="product_select">
 
           {% for variant in product.variants %}
-            <option value="{{ variant.id }}">{{ variant.title }}</option>
+            
+          <option value="{{ variant.id }}">{% if variant.inventory_quantity < 1 %}{{ variant.title }}&nbsp; - out of stock&nbsp;{% else %}{{ variant.title }}{% endif %}</option>
+            
           {% endfor %}
 
         </select><!-- .product_select -->

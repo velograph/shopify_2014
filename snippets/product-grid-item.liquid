@@ -1,16 +1,3 @@
-{% comment %}
-It may be a good idea to provide a theme setting that lets a merchant decide how many products to show per row
-on collection pages. Or, it may be a good idea to provide a control on the store front which lets a shopper decide 
-whether items be presented in a grid or in a list.
-That information about the presentation can be passed on to the product-grid-item.liquid snippet via the 'with' argument.
-Use of the 'with' argument is explained here: http://wiki.shopify.com/Include_(Liquid_tag).
-The information can then be referred to by accessing the variable which goes by the same name as the snippet,
-in this case product-grid-item. If the 'with' argument is not used, the snippet variable is set to an empty string.
-Here, for the sake of teaching, we will use 2 presentation options:
-- 3 products per row, when passing the value 'three-per-row' to the snippet
-- 4 products per row, when passing the value 'four-per-row' to the snippet
-{% endcomment %}
-
 {% comment %}If no value is passed to the snippet, we will set the snippet variable to a sensible default.{% endcomment %}
 {% if product-grid-item == '' %}{% assign product-grid-item = 'three-per-row' %}{% endif %}
 
@@ -26,6 +13,11 @@ Here, for the sake of teaching, we will use 2 presentation options:
     <a href="{{ product.url | within: collection }}">
       <img src="{{ product.featured_image.src | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
     </a>
+    {% if product.tags contains 'buy me' %}
+      <a href="{{ product.url | within: collection }}" class="buy_me">
+        <img src="{{ 'buy_me.svg' | asset_url }}" />
+      </a>
+    {% endif %}
   </div><!-- .prod-image-wrap -->
   
   <div class="prod-caption">

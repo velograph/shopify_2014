@@ -1,11 +1,13 @@
-{% if collection.handle == 'new-bikes' %}
+{% if collection.handle == 'new-bikes' or collection.handle == 'new-cargo-bikes' or collection.handle == 'new-cyclocross-bikes' or collection.handle == 'new-kids-bikes' or collection.handle == 'new-mountain-bikes' or collection.handle == 'new-road-bikes' or collection.handle == 'new-upright-bikes' %}
 
-  <h3>New Bike Categories</h3>
-  <h6>New Bikes are listed by Model. Click on a bike to see if we have one in stock</h6>
-
+  <h3>New Bikes</h3>
   <ul>
-    <li><a href="/collections/new-cyclocross-bikes">Cyclocross</a></li>
-    <li><a href="/collections/new-mountain-bikes">Mountain</a></li>
+    {% if collection.handle != 'new-bikes' %}
+      <li><a href="/collections/new-bikes">&larr; All New Bikes</a></li>
+    {% endif %}
+    {% for link in linklists.new-bikes.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
   </ul>
 
 {% elsif collection.handle == 'used-bikes' %}
@@ -52,28 +54,106 @@
   <h4>Sizes</h4>
   <ul>
     <li><a href="/collections/used-bikes">&larr; All Used Bikes</a></li>
-    {% for link in linklists.used-mountain-bikes.links %}
+    {% for link in linklists.used-road-bikes.links %}
       <li>{{ link.title | link_to: link.url }}</li>
     {% endfor %}
   </ul>
 
-{% elsif collection.handle == 'new-frames' %}
+{% elsif collection.handle == 'used-upright-bikes' %}
 
-  <h3>New Frame Categories</h3>
+  <h4>Sizes</h4>
   <ul>
-    {% for link in linklists.new-frames.links %}
-         <li>{{ link.title | link_to: link.url }}</li>
-       {% endfor %}
-     </ul>
+    <li><a href="/collections/used-bikes">&larr; All Used Bikes</a></li>
+    {% for link in linklists.used-upright-bikes.links %}
+      <li>{{ link.title | link_to: link.url }}</li>
+    {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'new-frames' or collection.handle == 'new-cyclocross-frames' or collection.handle == 'new-mountain-frames' or collection.handle == 'new-road-frames' %}
+
+  <h3>Browse by Type</h3>
+  <ul>
+  {% for link in linklists.new-frames.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
 
 {% elsif collection.handle == 'used-frames' %}
 
   <h3>Used Frame Categories</h3>
   <ul>
-    {% for link in linklists.used-frames.links %}
-         <li>{{ link.title | link_to: link.url }}</li>
-       {% endfor %}
-     </ul>
+  {% for link in linklists.used-frames.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'used-cyclocross-frames' %}
+
+  <h3>Sizes</h3>
+  <ul>
+    <li><a href="/collections/used-frames">&larr; All Used Frames</a></li>
+  {% for link in linklists.used-cyclocross-frames.links %}
+      <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'used-road-frames' %}
+
+  <h3>Sizes</h3>
+  <ul>
+    <li><a href="/collections/used-frames">&larr; All Used Frames</a></li>
+  {% for link in linklists.used-road-frames.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'used-mountain-frames' %}
+
+  <h3>Sizes</h3>
+  <ul>
+    <li><a href="/collections/used-frames">&larr; All Used Frames</a></li>
+  {% for link in linklists.used-mountain-frames.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'components' %}
+
+  <h3>Components</h3>
+  <ul>
+  {% for link in linklists.components.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'forks' %}
+
+  <h3>Forks by Size</h3>
+  <ul>
+  <li><a href="/collections/used-frames">&larr; Components</a></li>
+  {% for link in linklists.forks.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'accessories' %}
+
+  <h3>Accessories</h3>
+  <ul>
+  {% for link in linklists.accessories.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+{% elsif collection.handle == 'apparel' %}
+
+  <h3>Apparel</h3>
+  <ul>
+  {% for link in linklists.apparel.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
 {% endif %}
 
 
