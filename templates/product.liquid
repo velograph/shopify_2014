@@ -74,7 +74,7 @@
 
     </div><!-- .product_description -->
 
-    {% if collection.handle == 'new-bikes' %}
+    {% if product.variants > 1 %}
 
       <div class="product_section">
         <h4>Available Sizes:</h4>
@@ -88,15 +88,14 @@
 
       <div{% if hide_default_title %} class="hidden"{% endif %}>
         
-        <select class="product_select">
-
+        <strong>Available Sizes</strong>
+        <ul class="product_sizing">
           {% for variant in product.variants %}
-            
-          <option value="{{ variant.id }}">{% if variant.inventory_quantity < 1 %}{{ variant.title }}&nbsp; - out of stock&nbsp;{% else %}{{ variant.title }}{% endif %}</option>
-            
-          {% endfor %}
 
-        </select><!-- .product_select -->
+            <li>{% if variant.inventory_quantity < 1 %}<span class="out_of_stock">{{ variant.title }}&nbsp; - out of stock&nbsp;</span>{% else %}{{ variant.title }}{% endif %}</li>
+
+          {% endfor %}
+        </ul><!-- .product_sizing -->
 
       </div><!-- .hidden -->
 
@@ -111,15 +110,18 @@
 
       <div id="accordion">
 
-        <span class="opener">Available!</span>
+        <span class="opener">Click Me!</span>
 
         <div class="accordion_guts">
 
           <dl>
-          {% if product.type == 'Mountain Bikes' or product.type == 'Cyclocross Bikes' or product.type == 'Used Frames' or product.type == 'New Frames' %}
+          {% if product.tags contains 'bikes' or product.tags contains 'frames' %}
 
-            <dt><strong>Why is this {% if product.type == 'Mountain Bikes' or product.type == 'Cyclocross Bikes' %}bike{% elsif product.type == 'Mountain Frames' or product.type == 'Cyclocross Frames' %}frame {% endif %} not available for purchase online?</strong></dt>
-            <dd>We like to form a relationship with our customers, and as such, we want to make sure that the item you're buying is a perfect fit. </dd>
+            <dt><strong>Why can't I purchase this {% if product.tags contains 'bikes' %}bike{% elsif product.tags contains 'frames' %}frame{% endif %} online?</strong></dt>
+            <dd>At Sellwood, we don't want to just sell you a {% if product.tags contains 'bikes' %}bike{% elsif product.tags contains 'frames' %}frame{% endif %}. Instead of being able to click a button, we want to make sure that what you get from us is a good fit for your needs.</dd>
+            {% if product.tags contains 'bikes' and 'new' %}
+              <dd>Additionally. some of our dealer agreements prevent us from selling new bikes outside of the Portland area.</dd>
+            {% endif %}
 
           {% elsif product.type == 'Components' or product.type == 'Accessories' or product.type == 'Apparel' %}
             <dt><strong>Why is this {% if product.type == 'Components' %}component {% elsif product.type == 'Accessories' %}accessory {% elsif product.type == 'Apparel' %}item {% endif %} not available for purchase online?</strong></dt>
@@ -127,7 +129,7 @@
 
           {% endif %}
             <dt><strong>Contact Us</strong></dt>
-            <dd>You can reach us by phone at <a href="tel:5032239392">(503) 223 - 9392</a> Tuesday - Saturday / 10am-6pm<br /> or anytime <a href="mailto:shop@sellwoodcycle.com">by email</a>.</dd>
+            <dd>If you like what you see, give us a call at <br /><a href="tel:5032239392">(503) 223 - 9392</a> Tuesday - Saturday / 10am-6pm<br /> or <a href="mailto:shop@sellwoodcycle.com">email us</a> anytime and we'll arrange your purchase and shipping.</dd>
 
           </dl>
 
