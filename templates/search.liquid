@@ -12,15 +12,21 @@ applied to the elements on this page; the 'searchresults' id is used in the CSS
 selectors inside search.css.
 {% endcomment %}
 
-<div id="searchresults">
+<h2 class="page_title">Search Results</h2>
   
-  <form action="/search" method="get" class="search-form" role="search">
-    <p>
-      <input type="text" name="q" value="{{ search.terms | escape }}" />
-      <input type="submit" value="Search store..." />
-    </p>
-  </form>
+<div class="entry_content">
+
+  <div class="six columns">
+    <h4>Search again if you like!</h4>
+    <form action="/search" method="get" class="search-form" role="search">
+      <p>
+        <input type="text" name="q" value="{{ search.terms | escape }}" />
+        <input type="submit" value="Search store..." />
+      </p>
+    </form>
+  </div>
   
+  <div class="ten columns">
   {% comment %}
   search.performed is false when accessing the /search page without a 'q' parameter set
   in the URL. A shop-owner can link to the /search page from one of his link lists.
@@ -49,7 +55,7 @@ selectors inside search.css.
         {% if item.featured_image %}
         <div class="result-image">
           <a href="{{ item.url }}" title="{{ item.title | escape }}">
-            {{ item.featured_image.src | product_img_url: 'small' | img_tag: item.featured_image.alt }}
+            {{ item.featured_image.src | product_img_url: 'compact' | img_tag: item.featured_image.alt }}
           </a>
         </div>
         {% endif %}
@@ -68,5 +74,9 @@ selectors inside search.css.
     {% endpaginate %}    
     
   {% endif %}  
+
+  </div>
+
+  <div class="clear"></div>
 
 </div>

@@ -14,7 +14,7 @@
   <h1 class="blog_article_title">
     <a href="{{ article.url }}">{{ article.title }}</a>
   </h1>
-  <p class="blog_article_meta"><time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%b %d, %Y' }}</time>&nbsp;|&nbsp;Filed under {% for tag in article.tags %}<a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}&nbsp;|&nbsp;{% if blog.comments_enabled? %}<a href="{{ article.url }}#comments">{{ article.comments_count }} {{ article.comments_count | pluralize: 'comment', 'comments' }}{% endif %}</p>
+  <p class="blog_article_meta"><time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%b %d, %Y' }}</time>&nbsp;|&nbsp;Filed under {% for tag in article.tags %}<a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}&nbsp;|&nbsp;{% if blog.comments_enabled? %}<a href="{{ article.url }}#comments">{{ article.comments_count }} {{ article.comments_count | pluralize: 'comment', 'comments' }}{% endif %}</a></p>
       <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handelize }}">{{ tag }}</a>
   <div class="rte">
     {% if article.excerpt.size > 0 %}

@@ -110,25 +110,27 @@
       </p>
       {% endif %}
       
-      <span class="utility_divider">/</span>
-      {% comment %}
-      Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
-      Paypal Express Checkout and/or Google Checkout have special checkout buttons on the /cart page. Also,
-      special instructions for the seller are entered on the /cart page.
-      {% endcomment %}
+      <div style="display: none;">
+        <span class="utility_divider">/</span>
+        {% comment %}
+        Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
+        Paypal Express Checkout and/or Google Checkout have special checkout buttons on the /cart page. Also,
+        special instructions for the seller are entered on the /cart page.
+        {% endcomment %}
 
-      <div class="checkout-cart">
-        <ul>
-          <li>
-            <a href="/cart">Your Cart</a>
-          </li>
-          <li>
-            <a href="/cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</a>
-          </li>
-          <li>
-            <a href="/cart">({{ cart.total_price | money }})</a>
-          </li>
-        </ul>
+        <div class="checkout-cart">
+          <ul>
+            <li>
+              <a href="/cart">Your Cart</a>
+            </li>
+            <li>
+              <a href="/cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</a>
+            </li>
+            <li>
+              <a href="/cart">({{ cart.total_price | money }})</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
     </section><!-- .top_utility -->
@@ -375,6 +377,13 @@
     <![endif]-->
     
   </div><!-- end of #container -->
+
+  <script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0017/0503.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+  </script>
 
 </body>
 </html>

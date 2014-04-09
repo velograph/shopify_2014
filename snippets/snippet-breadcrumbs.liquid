@@ -4,7 +4,7 @@
       {% if collection %}            
       <span class="sep">/</span> <span><a href="/collections">Collections</a></span> <span class="sep">/</span> <span><a href="{{ collection.url }}">{{ collection.title }}</a></span>
       {% else %}
-      <span class="sep">/</span> <span><a href="/collections/all">Products</a></span>
+      <span class="sep">/</span> <span><a href="/collections/">Collections</a></span>
       {% endif %}
       <span class="sep">/</span> <span>{{ product.title }}</span>
    {% elsif template contains "list-collections" %}

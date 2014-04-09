@@ -11,7 +11,12 @@
         {% capture alt %}image_{{ i }}_alt{% endcapture %}
         {% capture caption %}image_{{ i }}_caption{% endcapture %}
         {% if settings[display_slideshow] %}
-          <li class="slide"><a href="{{settings[link]}}"></a><img src="{{ slide | asset_url }}" data-url="{{ settings[link] }}" class="slide-img" alt="{{ settings[alt] }}" />{% if settings.caption %}<h2>{{ settings[caption] }}</h2>{% endif %}</li>
+          <li class="slide">
+            <a href="{{settings[link]}}">
+              <img src="{{ slide | asset_url }}" data-url="{{ settings[link] }}" class="slide-img" alt="{{ settings[alt] }}" />
+              <h4>{{ settings[caption] }}</h4>
+            </a>
+          </li>
         {% endif %}             
         {% endfor %}
       </ul>
@@ -20,28 +25,16 @@
   </div> <!-- .slideshow -->
 </section> <!-- #slideshow -->
 
-{% comment %}
-Re-use the 'rte' class wherever you output content that was added by a merchant using
-the Rich Text Editor ( 'rte' stands for rich text editor ).
-Style all HTML elements in that content the same way across the board.
-Use the 'rte' class in your CSS to help maintain that consistency.
-Example: the h2 element should have the same size and color in:
-- product descriptions
-- collection descriptions
-- 'page' pages' content
-- blog post
-{% endcomment %}
-
-
-<!-- START OF LATEST BLOG POSTS -->
+<!-- START OF CALENDAR POSTS -->
 <div id="widget-latest-blog-posts" class="widget six columns shop_calendar">
 
-  <h3>Upcoming Events</h3>
-
+  <h3>Upcoming Events
+    <span class="calendar_link"><a href="/blogs/calendar/">View all events</a></span>
+</h3>
   <ul class="latest-blog-posts-list">
 
     {% assign blog_handle = 'calendar' %}
-    {% assign how_many_articles_to_show = 5 %}
+    {% assign how_many_articles_to_show = 3 %}
 
     {% for article in blogs[blog_handle].articles limit: how_many_articles_to_show %}
       <li><h4>{{ article.title | link_to: article.url }}</h4> {{ article.excerpt }}</li>

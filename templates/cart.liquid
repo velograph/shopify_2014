@@ -1,18 +1,17 @@
-<h1>Shopping Cart</h1>
-  
 {% if cart.item_count > 0 %}
 
+<h2 class="page_title">Shopping Cart</h2>
+  
 <form action="/cart" method="post">
   
-  <table>
+  <table class="shopping_cart_table">
     
     <thead>
       <tr>
-        <th>Item</th>
+        <th><h4>Item</h4></th>
         <th>&nbsp;</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
+        <th><h4>Quantity</h4></th>
+        <th><h4>Total</h4></th>
         <th>&nbsp;</th>
       </tr>
     </thead>
@@ -21,32 +20,20 @@
 
     {% for item in cart.items %}    
     
-      {% comment %}
-      Determining the handle of the collection that was last seen for the 'continue shopping' link.
-      {% endcomment %}
-      
-      {% if forloop.first %}
-        {% assign collection_url = item.product.collections.first.url %}
-        {% if collection_url == '/collections/frontpage' or collection_url == '' %}{% assign collection_url = '/collections/all' %}{% endif %}
-      {% endif %}
-
       <tr>
         <td>
           <a href="{{ item.product.url | within: collections.all }}">  
-            <img src="{{ item.product.featured_image.src | product_img_url: 'compact' }}" alt="{{ item.title | escape }}" />
+            <img src="{{ item.product.featured_image.src | product_img_url: 'small' }}" alt="{{ item.title | escape }}" />
           </a>
         </td>
         <td>
-          <h2>
-            <a href="{{ item.product.url | within: collections.all }}">
-            {{ item.title }}
-            {% if item.product.variants.size == 1 %}
-              {% unless item.variant.title contains 'Default' %}
-               - {{ item.variant.title }}
-              {% endunless %}
+          <h6>{{ item.vendor }}</h6>
+          <a href="{{ item.product.url | within: collections.all }}">
+            <h4>{{ item.product.title }}</h4>
+            {% if item.product.variants.size > 0 %}
+              {{ item.variant.title }}
             {% endif %}
-            </a>
-          </h2>
+          </a>
           {% comment %}
           Line Item Properties
           {% endcomment %}
@@ -65,11 +52,9 @@
             {% endfor %}
           </p>
           {% endif %}
-          <h3>{{ item.vendor }}</h3>
         </td>
-        <td>{{ item.price | money }}</td>
         <td>
-          <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" />
+          <input class="quantity" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" />
         </td>
         <td>{{ item.line_price | money }}</td>
         <td>
@@ -107,7 +92,7 @@
   they need to use a name attribute set to 'note'. That's case-sensitive.
   {% endcomment %}
   <div>
-    <p>Special instructions for seller</p>
+    <p>Would you like to send us a love note?</p>
     <textarea name="note">{{ cart.note }}</textarea>
   </div>
 
@@ -116,8 +101,8 @@
 {% else %}
 
 <div>
-  <h2>It appears that your cart is currently empty!</h2>
-  <h3>You can continue browsing <a href="/collections/all">here</a>.</h3>
+  <h2>It looks like your cart is empty. You can continue browsing below.</h2>
+  {% include 'snippet-list-collections' %}
 </div>
 
 {% endif %}

@@ -2,9 +2,6 @@
 
   <h3>New Bikes</h3>
   <ul>
-    {% if collection.handle != 'new-bikes' %}
-      <li><a href="/collections/new-bikes">&larr; All New Bikes</a></li>
-    {% endif %}
     {% for link in linklists.new-bikes.links %}
       <li><a href="{{ link.url }}">{{ link.title }}</a></li>
     {% endfor %}
