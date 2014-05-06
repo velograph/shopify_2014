@@ -74,20 +74,11 @@
 
     </div><!-- .product_description -->
 
-    {% if product.variants > 1 %}
-
-      <div class="product_section">
-        <h4>Available Sizes:</h4>
-        <em>Current available sizes in the shop. If you don't see your size, we probably have one on the way!</em>
-      </div>
-
-    {% endif %}
-      
-    {% if product.variants.size > 1 %}
     <div class="product_variants{% if hide_default_title %}{% unless settings.show_qty and product.available %} hidden{% endunless %}{% endif %} product_section">
 
       <div{% if hide_default_title %} class="hidden"{% endif %}>
         
+        {% if product.tags contains 'new' and product.tags contains 'bikes' %}
         <strong>Available Sizes</strong>
         <ul class="product_sizing">
           {% for variant in product.variants %}
@@ -96,6 +87,7 @@
 
           {% endfor %}
         </ul><!-- .product_sizing -->
+      {% endif %}
 
       </div><!-- .hidden -->
 
@@ -104,7 +96,6 @@
       {% endif %}
 
     </div><!-- .product_variants -->
-    {% endif %}
 
     <div class="product_add product_section">
 
