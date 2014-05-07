@@ -81,82 +81,20 @@
 
           </div><!-- .product_description -->
 
-          {% if collection.handle == 'new-bikes' %}
-
-            <div class="product_section">
-              <h4>Available Sizes:</h4>
-              <em>Current available sizes in the shop. If you don't see your size, we probably have one on the way!</em>
-            </div>
-
-          {% endif %}
-            
-          {% if product.variants.size > 1 %}
           <div class="product_variants{% if hide_default_title %}{% unless settings.show_qty and product.available %} hidden{% endunless %}{% endif %} product_section">
 
-            <div{% if hide_default_title %} class="hidden"{% endif %}>
-              
-              <select class="product_select">
-
-                {% for variant in product.variants %}
-                  
+             <select id="product-select" name="id">
+             {% for variant in product.variants %}
                 <option value="{{ variant.id }}">{% if variant.inventory_quantity < 1 %}{{ variant.title }}&nbsp; - out of stock&nbsp;{% else %}{{ variant.title }}{% endif %}</option>
-                  
-                {% endfor %}
-
-              </select><!-- .product_select -->
-
-            </div><!-- .hidden -->
-
-            {% if settings.show_qty %}
-              {% include 'snippet-quantity' %}
-            {% endif %}
+             {% endfor %}
+             </select>
 
           </div><!-- .product_variants -->
-          {% endif %}
 
-          {% assign hide_default_title = false %}
-          {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
-            {% assign hide_default_title = true %}
-          {% endif %}       
-
-          <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
-           <select id="product-select" name="id" class="hidden">
-           {% for variant in product.variants %}
-             <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-           {% endfor %}
-           </select>
-          </div>        
-                 
           <div class="product_add">
             <input type="submit" name="add" class="opener" id="add" value="Add to cart">
           </div>
         
-          <div class="product_collection_type product_section">
-
-            <div class="collections_list">
-
-              <ul>
-                <li><span class="list_title">Tags:</span></li>
-              {% for tag in product.tags %}
-                <li>{{ tag | link_to_tag: tag }}</li>
-              {% endfor %}
-              </ul>
-
-            </div><!-- .collections_list -->
-
-            <div class="product_type">
-
-              <ul>
-                <li><span class="list_title">Collections:</span></li>
-                <li>{{ product.type | link_to_type }}</li>
-              </ul>
-
-            </div><!-- .product_type -->
-
-            <div class="clear"></div>
-
-          </div><!-- .product_collection_type -->
-
           <div class="product_share product_section">
 
             {% include 'snippet-product-share' %}
