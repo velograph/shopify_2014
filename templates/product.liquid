@@ -78,7 +78,7 @@
 
       <div{% if hide_default_title %} class="hidden"{% endif %}>
         
-        {% if product.tags contains 'new' and product.tags contains 'bikes' %}
+        {% if product.tags contains 'new' and product.tags contains 'frames' or product.tags contains 'bikes' %}
         <strong>Available Sizes</strong>
         <ul class="product_sizing">
           {% for variant in product.variants %}
