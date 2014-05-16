@@ -1,0 +1,93 @@
+{% comment %}
+
+<div id="accordion">
+  <h3>New Bikes</h3>
+  <ul>
+    {% for link in linklists.new-bikes.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+    <h3>Testing Nested Accordion</h3>
+    <ul>
+      {% for link in linklists.used-bikes.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </ul>
+  <h3>Used Bikes</h3>
+  <ul>
+    {% for link in linklists.used-bikes.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <h3>New Frames</h3>
+  <ul>
+    {% for link in linklists.new-frames.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <h3>Used Frames</h3>
+  <ul>
+    {% for link in linklists.used-frames.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endcomment %}
+  <div class="four columns">
+
+    {% include 'test-nav' %}
+
+  </div>
+
+  <div class="twelve columns">
+
+<div class="side_menu">
+  <h3>New Bikes</h3>
+  <ul>
+    {% for link in linklists.new-bikes.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <h3>Used Bikes</h3>
+    <div class="side_menu">
+      <h3>Cyclocross</h3>
+      <ul>
+        {% for link in linklists.used-cyclocross-bikes.links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+      </ul>
+      <h3>Kids</h3>
+      <ul>
+        {% for link in linklists.used-kids-bikes.links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+      </ul>
+      <h3>Mountain</h3>
+      <ul>
+        {% for link in linklists.used-mountain-bikes.links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+      </ul>
+      <h3>Road</h3>
+      <ul>
+        {% for link in linklists.used-road-bikes.links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+      </ul>
+      <h3>Upright</h3>
+      <ul>
+        {% for link in linklists.used-upright-bikes.links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+       {% endfor %}
+      </ul>
+  <div class="side_menu">
+    <h3>test2</h3>
+    <div>
+      test2cont
+    </div>
+  </div>
+</div>
+
+  </div>
+

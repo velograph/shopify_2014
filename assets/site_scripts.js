@@ -30,4 +30,13 @@ $(function() {
     active: false,
     collapsible: true,
   });
- });
+});
+
+$(function() {
+  $(".side_menu").accordion({
+    header: "> h3:not(.item)",
+    heightStyle: "content",
+    active: false,
+    collapsible: true
+  });
+});

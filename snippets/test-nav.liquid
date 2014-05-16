@@ -1,0 +1,21 @@
+  <h3>Components</h3>
+  <ul>
+  {% for link in linklists.components.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+  <h3>Forks</h3>
+  <ul>
+  {% for link in linklists.forks.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+
+  <h3>Wheels</h3>
+  <ul>
+  {% for link in linklists.wheels.links %}
+    <li>{{ link.title | link_to: link.url }}</li>
+  {% endfor %}
+  </ul>
+

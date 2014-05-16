@@ -85,17 +85,18 @@
 
   <div class="container">
 
-    <section class="offset-by-six ten top_utility">
+    <section class="top_utility">
       {% comment %}
       Older browsers don't support the HTML5 placeholder attribute, so it's a good idea to use JavaScript
       to show and hide the placeholder text.
       Have a look in assets/shop.js.liquid to see sample JavaScript for this.
       {% endcomment %}
       
-      <form action="/search" method="get" class="search-form" role="search">
-        <input name="q" type="text" id="search-field" placeholder="Search..." class="hint" />
-        <input type="submit" id="search-submit" value="" class="search" />
-      </form>
+      <div class="offset-by-two fourteen columns">
+        <form action="/search" method="get" class="search-form" role="search">
+          <input name="q" type="text" id="search-field" placeholder="Search..." class="hint" />
+          <input type="submit" id="search-submit" value="" class="search" />
+        </form>
 
       {% if shop.customer_accounts_enabled %}
       <p class="customer-links">
@@ -110,7 +111,6 @@
       </p>
       {% endif %}
       
-      <div>
         <span class="utility_divider">/</span>
         {% comment %}
         Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
@@ -131,6 +131,7 @@
             </li>
           </ul>
         </div>
+
       </div>
 
     </section><!-- .top_utility -->
