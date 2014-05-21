@@ -24,8 +24,6 @@
               <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
             </a>
             {% endif %}
-            <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="zoom-image" {% unless settings.display_product_image_enlarge %}style="display:none;"{% endunless %}>Enlarge Image</a>
-            {% if product.price_min < product.compare_at_price_min %}<span class="banner sale">Sale</span>{% endif %}
           </div> <!-- /.image -->
           {% if product.images.size > 1 %}
 
@@ -83,11 +81,13 @@
 
           <div class="product_variants{% if hide_default_title %}{% unless settings.show_qty and product.available %} hidden{% endunless %}{% endif %} product_section">
 
-             <select id="product-select" name="id">
-             {% for variant in product.variants %}
-                <option value="{{ variant.id }}">{% if variant.inventory_quantity < 1 %}{{ variant.title }}&nbsp; - out of stock&nbsp;{% else %}{{ variant.title }}{% endif %}</option>
-             {% endfor %}
-             </select>
+            <select id="product-select" name="id">
+              {% for variant in product.variants %}
+                {% if variant.inventory_quantity > 0 %}
+                <option value="{{ variant.id }}">{{ variant.title }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
 
           </div><!-- .product_variants -->
 

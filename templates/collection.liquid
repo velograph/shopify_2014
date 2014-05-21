@@ -3,7 +3,11 @@
 
   <div class="four columns">
 
-    {% include 'side-nav' %}
+    {% if collection.handle == 'components' or collection.handle == 'wheels' or collection.handle == 'forks' %}
+      {% include 'test-nav' %}
+    {% else %}
+      {% include 'side-nav' %}
+    {% endif %}
 
   {% comment %}
   Important notes about pagination:
