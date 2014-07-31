@@ -1,3 +1,5 @@
+
+  {% comment %}
 {% if template == "index" and settings.display_slideshow %}
 
 <section id="slideshow" class="ten columns">
@@ -64,6 +66,21 @@
 <div class="clear"></div>
 
 {% endif %}
+
+{% endcomment %}
+
+<div class="widget sixteen columns alerts_area">
+
+    {% assign blog_handle = 'alerts' %}
+    {% assign how_many_articles_to_show = 1 %}
+
+    {% for article in blogs[blog_handle].articles limit: how_many_articles_to_show %}
+      <h4>{{ article.title | }}</h4>
+    {% endfor %}
+
+</div>
+
+<div class="clear"></div>
 
 <div class="six columns dotted_divider">
   &nbsp;
